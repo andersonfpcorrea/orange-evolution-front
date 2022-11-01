@@ -6,6 +6,7 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
+    "plugin:jest/recommended",
     "plugin:prettier/recommended"
   ],
   "overrides": [],
@@ -13,7 +14,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "jest"],
   "rules": {
     "prettier/prettier": "error"
   },
