@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  flex-grow: 1;
+  max-width: 20rem;
+}
+
+.main {
+  flex-grow: 4;
+  background-color: red;
+}

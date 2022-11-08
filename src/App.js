@@ -1,10 +1,8 @@
 import './App.css';
-import Sidebar from './componenents/Sidebar';
+import Home from './pages/Home/Home';
 
 function App() {
-  return (
-    <Sidebar/>
-  );
+  return <Home />;
 }
 
 export default App;

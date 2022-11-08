@@ -1,0 +1,26 @@
+.sidebar {
+  background-color: #fb6d3a;
+  height: 100%;
+  width: 100%;
+  padding: 2.4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar__top {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+img {
+  width: 8rem;
+}
