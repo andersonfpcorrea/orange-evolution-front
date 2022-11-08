@@ -1,4 +1,5 @@
 import Sidebar from '../../componenents/Sidebar/Sidebar';
+import Progress from '../../componenents/Progress/Progress';
 import style from './Home.module.css';
 
 function Home() {
@@ -7,7 +8,9 @@ function Home() {
       <div className={style.sidebar}>
         <Sidebar />
       </div>
-      <main className={style.main}>Main</main>
+      <main className={style.main}>
+        <Progress />
+      </main>
     </div>
   );
 }
