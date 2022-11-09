@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 600px;
+    padding-top: 100px;
+}
+
+.container form label {
+    display: block;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+}
+
+.container form input {
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0.9em;
+    border: none;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.2);
+    border-radius: 10px 8px 0 0;
+    font-size: 1.2rem;
+}
+
