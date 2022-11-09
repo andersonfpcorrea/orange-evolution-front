@@ -1,0 +1,32 @@
+.progress-container {
+  display: grid;
+  place-items: center;
+  padding-top: 1rem;
+}
+
+.progress-bar {
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: '';
+  background-color: white;
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.progress-value {
+  isolation: isolate;
+  font-size: 3rem;
+  color: #ddd;
+}

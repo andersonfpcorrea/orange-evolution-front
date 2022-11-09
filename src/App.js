@@ -1,10 +1,7 @@
-// import './App.css';
-import SearchBar from './components/searchBar/searchBar';
+import Home from './pages/Home/Home';
 
 function App() {
-  return (
-    <SearchBar />
-  )
+  return <Home />;
 }
 
 export default App;
