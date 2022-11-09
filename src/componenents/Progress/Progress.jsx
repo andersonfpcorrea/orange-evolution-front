@@ -7,17 +7,18 @@ function Progress() {
   const progressFinal = 10;
   const speed = 30;
 
-  useEffect(() => {
+  const animateProgressBar = () =>
     setTimeout(() => {
-      if (progress < progressFinal) {
-        setProgress(progress + 1);
-      }
+      setProgress(progress + 1);
     }, speed);
+
+  useEffect(() => {
+    if (progress < progressFinal) animateProgressBar();
   }, [progress]);
 
   return (
     <div className='flex flex-col gap-2'>
-      <h2 className='font-medium text-3xl' style={{ color: '#181B1A' }}>
+      <h2 className='font-medium text-2xl' style={{ color: '#181B1A' }}>
         Seu progresso
       </h2>
       <div className='flex gap-12' style={{ color: '#333' }}>

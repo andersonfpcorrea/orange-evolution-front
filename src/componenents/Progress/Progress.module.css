@@ -1,7 +1,7 @@
 .progress-container {
   display: grid;
   place-items: center;
-  padding: 1rem;
+  padding-top: 1rem;
 }
 
 .progress-bar {
@@ -27,6 +27,6 @@
 
 .progress-value {
   isolation: isolate;
-  font-size: 3.4rem;
+  font-size: 3rem;
   color: #ddd;
 }
