@@ -1,5 +1,5 @@
 import style from './Sidebar.module.css';
-import logo from '../../assets/orange-juice-logo.png';
+import logo from '../../assets/logo.png';
 import {
   MdHome,
   MdRadar,
