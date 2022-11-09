@@ -4,14 +4,14 @@ const SearchResults = ({ data }) => {
 
   const resultList = data.map(({ id, course }) => {
     return (
-      <li key={id}>
+      <li className="flex" key={id}>
         <span>{course}</span>
       </li>
     )
   })
 
   return (
-    <div className="search-results">
+    <div>
       <ul>{resultList.SearchResults}</ul>
     </div>
   )

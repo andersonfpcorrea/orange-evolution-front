@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import SearchResults from './searchResults';
-import './searchBar.css';
-
+import style from './searchBar.module.css';
 
 function SearchBar() {
   const [data, setData] = useState([]);
@@ -24,7 +23,7 @@ function SearchBar() {
   }
 
   return (
-    <div className="container">
+    <div className={style.container}>
       <form>
           <label htmlFor="search">Boas vindas, Lia</label>
           <input 
