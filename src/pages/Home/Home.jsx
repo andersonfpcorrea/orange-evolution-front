@@ -1,5 +1,5 @@
-import Sidebar from '../../componenents/Sidebar/Sidebar';
-import Progress from '../../componenents/Progress/Progress';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import Progress from '../../components/Progress/Progress';
 import style from './Home.module.css';
 
 function Home() {
