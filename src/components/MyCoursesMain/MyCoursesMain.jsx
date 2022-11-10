@@ -10,12 +10,13 @@ function MyCoursesMain() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
   return (
-    <div className='flex w-full'>
-      <div className='grow-3'>
+    <div className='flex w-full gap-8'>
+      <div>
         <VideoPlayer video={selectedVideo} />
       </div>
-      <div className='grow-1'>
+      <div>
         <MyCoursesAside
+          selectedVideo={selectedVideo}
           courseList={currentRoadmapVideos}
           setSelectedVideo={setSelectedVideo}
         />

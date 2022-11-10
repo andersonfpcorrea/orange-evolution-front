@@ -60,7 +60,7 @@ export const user = {
 };
 
 export const currentRoadmapVideos = {
-  quantity: 10,
+  quantity: 6,
   videos: [
     {
       id: 35,

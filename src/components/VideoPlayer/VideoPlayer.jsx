@@ -5,14 +5,13 @@ import OrangeLogo from '../../assets/black-logo.jpg';
 import { BsYoutube } from 'react-icons/bs';
 
 function VideoPlayer({ video }) {
-  console.log(video);
   const videoID = video.url.slice(video.url.indexOf('=') + 1);
   const { user } = useContext(AppContext);
 
   const Player = () => (
     <div>
       <iframe
-        width='782'
+        width='800'
         height='450'
         style={{ borderRadius: '1rem' }}
         src={`https://www.youtube.com/embed/${videoID}`}
@@ -68,7 +67,7 @@ function VideoPlayer({ video }) {
     return (
       <div className='flex flex-col'>
         {paragraphs.map((el, i) => (
-          <p>
+          <p key={anchors[i].text}>
             {el}
             <a href={anchors[i].href} className='text-evolution underline'>
               {anchors[i].text}
@@ -86,7 +85,7 @@ function VideoPlayer({ video }) {
         <Player />
         <div className='flex flex-col gap-6'>
           <InfoCard />
-          <hr />
+          <hr className='w-full' />
           <OrangeJuiceLinks />
         </div>
       </div>
