@@ -7,6 +7,7 @@ import {
   MdPerson,
   MdExitToApp,
 } from 'react-icons/md';
+import { motion } from 'framer-motion';
 
 function Sidebar({ setView, view }) {
   const icons = [<MdHome />, <MdRadar />, <MdComputer />, <MdPerson />];
@@ -19,35 +20,28 @@ function Sidebar({ setView, view }) {
         <img src={logo} alt='Orange Juice logo' className={style.logo} />
         <ul className={style.sidebar__list}>
           {content.map((el, i) => {
-            // return (
-            //   <li key={el}>
-            //     <NavLink
-            //       to={routes[i]}
-            //       className='flex items-center gap-4 rounded-3xl ml-12 py-2 px-4 w-full'
-            //       style={({ isActive }) =>
-            //         isActive
-            //           ? { color: '#fb6d3a', backgroundColor: 'white' }
-            //           : undefined
-            //       }
-            //       onClick={() => setView}
-            //     >
-            //       <>{icons[i]}</>
-            //       <p>{el}</p>
-            //     </NavLink>
-            //   </li>
-            // );
-            return (
+            const liActive = (
+              <li key={el} onClick={() => setView(routes[i])}>
+                <motion.div
+                  layoutId='white'
+                  className='flex items-center gap-4 rounded-l-3xl ml-12 py-2 px-4 text-evolution bg-white'
+                >
+                  <>{icons[i]}</>
+                  <p>{el}</p>
+                </motion.div>
+              </li>
+            );
+            const liInactive = (
               <li
                 key={el}
-                className={`flex items-center gap-4 rounded-3xl ml-12 py-2 px-4 w-full ${
-                  view === routes[i] && 'text-evolution bg-white'
-                }`}
+                className='flex items-center gap-4 ml-12 py-2 px-4 w-full'
                 onClick={() => setView(routes[i])}
               >
                 <>{icons[i]}</>
                 <p>{el}</p>
               </li>
             );
+            return view === routes[i] ? liActive : liInactive;
           })}
         </ul>
       </div>
