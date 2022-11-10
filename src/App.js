@@ -3,13 +3,15 @@ import Root from './pages/Root/Root';
 import style from './App.module.css';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import MyCourses from './pages/MyCourses/MyCourses';
 
 function App() {
   const [view, setView] = useState('root');
   const views = {
     root: <Root />,
-    courses: <div>Courses</div>,
-    myCourses: <div>MyCourses</div>,
+    course: <div>Courses</div>,
+    roadmaps: <div>Roadmaps</div>,
+    myCourses: <MyCourses />,
     profile: <div>Profile</div>,
   };
   return (
