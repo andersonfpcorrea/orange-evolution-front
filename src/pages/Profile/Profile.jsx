@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import AppContext from '../../context/context';
 import Button from '../../components/Button/Button';
-import ProfileCard from '../../components/ProfileCard/ProfileCard';
+// import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import BackNavArrow from '../../components/BackNavArrow/BackNavArrow';
+import EditProfile from '../../components/EditProfile/EditProfile';
 
 function Profile() {
   const { user } = useContext(AppContext);
@@ -12,7 +13,8 @@ function Profile() {
       <BackNavArrow />
       <div className='flex flex-col gap-8'>
         <h2 className='text-3xl font-medium'>Meu perfil</h2>
-        <ProfileCard user={user} />
+        {/* <ProfileCard user={user} /> */}
+        <EditProfile />
         <div className='flex justify-around'>
           <Button text='Cancelar' outline={true} />
           <Button text='Editar' />
