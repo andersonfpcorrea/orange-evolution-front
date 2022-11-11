@@ -3,12 +3,13 @@ import Home from './pages/Home/Home';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import MyCourses from './pages/MyCourses/MyCourses';
+import Explore from './pages/Explore/Explore';
 
 function App() {
   const [view, setView] = useState('home');
   const views = {
     home: <Home />,
-    course: <div>Courses</div>,
+    explore: <Explore />,
     roadmaps: <div>Roadmaps</div>,
     myCourses: <MyCourses />,
     profile: <div>Profile</div>,
