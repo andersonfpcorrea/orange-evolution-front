@@ -3,7 +3,6 @@ import { BsDot } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 
 function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
-  console.log(courseList);
   const { videos } = courseList;
 
   const activeStyle = 'bg-evolution bg-opacity-40 rounded-l-full opacity-80';

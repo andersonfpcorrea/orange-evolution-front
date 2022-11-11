@@ -23,7 +23,7 @@ function Profile() {
 
         {view === 'card' ? (
           <Animate id='1'>
-            <ProfileCard user={user} />
+            <ProfileCard user={user} callback={() => setView('form')} />
           </Animate>
         ) : (
           <Animate id='2'>
@@ -31,11 +31,12 @@ function Profile() {
           </Animate>
         )}
 
-        <div className='flex justify-around'>
+        <div className='flex justify-between'>
           <Button
             text='Cancelar'
             outline={true}
             onClick={() => setView('card')}
+            className={view === 'card' ? 'invisible' : ''}
           />
           <Button
             text={view === 'card' ? 'Editar' : 'Salvar'}

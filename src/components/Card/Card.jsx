@@ -3,7 +3,6 @@ import Background from '../../assets/christopher-gower-m_HRfLhgABo-unsplash 1.pn
 import formatTimeString from '../../utils/formatTimeString';
 
 function Card({ course, roadmap }) {
-  console.log(roadmap);
   const courseCard = (
     <div
       className='flex flex-col justify-between py-6 px-4 bg-red-300 text-sm h-64 w-64 rounded-2xl text-white font-medium cursor-pointer'

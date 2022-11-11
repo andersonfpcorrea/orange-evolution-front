@@ -56,6 +56,7 @@ export const user = {
   firstName: 'Lia',
   lastName: 'Sousa',
   email: 'liasousa@gmail.com',
+  photo: 'https://i.ibb.co/rMxyrPq/Lia.png',
   currentRoadmap: 'Desenvolvimento Full Stack',
 };
 
