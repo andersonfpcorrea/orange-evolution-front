@@ -1,8 +1,7 @@
-import VideoPlayer from '../VideoPlayer/VideoPlayer';
-import AppContext from '../../context/context';
-import MyCoursesAside from '../MyCoursesAside/MyCoursesAside';
-import { useContext } from 'react';
-import { useState } from 'react';
+import { useContext, useState } from "react";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import AppContext from "../../context/context";
+import MyCoursesAside from "../MyCoursesAside/MyCoursesAside";
 
 function MyCoursesMain() {
   const { currentRoadmapVideos } = useContext(AppContext);
@@ -10,7 +9,7 @@ function MyCoursesMain() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
   return (
-    <div className='flex w-full gap-8'>
+    <div className="flex w-full gap-8">
       <div>
         <VideoPlayer video={selectedVideo} />
       </div>

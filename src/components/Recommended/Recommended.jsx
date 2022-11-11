@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import AliceCarousel from 'react-alice-carousel';
-import './carousel.css';
-import AppContext from '../../context/context';
-import Card from '../Card/Card';
+import { useContext } from "react";
+import AliceCarousel from "react-alice-carousel";
+import "./carousel.css";
+import AppContext from "../../context/context";
+import Card from "../Card/Card";
 
 function Recommended() {
   const {
@@ -20,13 +20,13 @@ function Recommended() {
   ));
 
   return (
-    <div className='flex flex-col gap-8 w-[50rem]'>
-      <h2 className='font-medium text-2xl'>Recomendado para você</h2>
+    <div className="flex flex-col gap-8 w-[50rem]">
+      <h2 className="font-medium text-2xl">Recomendado para você</h2>
       <AliceCarousel
         mouseTracking
         items={items}
         responsive={responsive}
-        controlsStrategy='alternate'
+        controlsStrategy="alternate"
       />
     </div>
   );

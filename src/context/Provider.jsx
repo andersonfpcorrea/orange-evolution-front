@@ -1,11 +1,11 @@
-import AppContext from './context';
+import AppContext from "./context";
 import {
   user,
   progress,
   currentRoadmapCourses,
   currentRoadmapVideos,
   roadmaps,
-} from '../mockUserData';
+} from "../mockUserData";
 
 const store = {
   user,
@@ -15,8 +15,8 @@ const store = {
   roadmaps,
 };
 
-const AppProvider = ({ children }) => {
+function AppProvider({ children }) {
   return <AppContext.Provider value={store}>{children}</AppContext.Provider>;
-};
+}
 
 export default AppProvider;

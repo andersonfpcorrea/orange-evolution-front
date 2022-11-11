@@ -1,5 +1,5 @@
-import BackNavArrow from '../../components/BackNavArrow/BackNavArrow';
-import MyCoursesMain from '../../components/MyCoursesMain/MyCoursesMain';
+import BackNavArrow from "../../components/BackNavArrow/BackNavArrow";
+import MyCoursesMain from "../../components/MyCoursesMain/MyCoursesMain";
 
 function MyCourses() {
   return (
