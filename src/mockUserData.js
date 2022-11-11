@@ -53,9 +53,9 @@ export const progress = {
 
 export const user = {
   id: 1,
-  firstName: 'Anderson',
-  lastName: 'Corrêa',
-  email: 'anderson@gmail.com',
+  firstName: 'Lia',
+  lastName: 'Sousa',
+  email: 'liasousa@gmail.com',
   currentRoadmap: 'Desenvolvimento Full Stack',
 };
 
