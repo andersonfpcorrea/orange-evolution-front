@@ -1,4 +1,10 @@
-function Button({ text, outline = false, type = 'button' }) {
+function Button({
+  text,
+  outline = false,
+  type = 'button',
+  onClick,
+  className,
+}) {
   return (
     <button
       type={type}
@@ -6,7 +12,8 @@ function Button({ text, outline = false, type = 'button' }) {
         outline
           ? 'border-evolution border-solid border-[1px] text-evolution'
           : 'bg-evolution border-none text-white'
-      } rounded-md h-12 w-36`}
+      } rounded-md h-12 w-36 ${className}`}
+      onClick={onClick}
     >
       {text}
     </button>

@@ -1,67 +1,35 @@
-import { MdKeyboardBackspace } from "react-icons/md";
-import React from "react";
+import InputSelect from '../InputSelect/InputSelect';
+import InputText from '../InputText/InputText';
 
-function Profile() {
+function EditProfile({ user, roadmaps }) {
   return (
-    <div>
-      <section>
-        <div className="fixed top-[-48px] left-[-42px]">
-          <MdKeyboardBackspace style={{ width: "24px", height: "24px" }} />
-        </div>
-        <form>
-          <div class="flow-root">
-            <label htmlFor="input-name" className="float-left">
-              <h2>Nome</h2>
-              <input
-               className="bg-evolutionIce border-2 border-neutral-400 rounded-md w-[20rem] h-10 rounded-5xl px-5"
-                id="input-name"
-                placeholder="Lia"
-                type="name"
-              />
-            </label>
-            <label htmlFor="input-name" className="float-right">
-              <h2>Sobrenome</h2>
-              <input
-                className="bg-evolutionIce border-2 border-neutral-400 rounded-md w-[20rem] h-10 rounded-5xl px-5"
-                id="input-name"
-                placeholder="Souza"
-                type="name"
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="input-email">
-              <h2>Email</h2>
-              <input
-                className="bg-evolutionIce border-2 border-neutral-400 rounded-md w-[45rem] h-10 rounded-5xl px-5"
-                id="input-email"
-                placeholder="liasouza@email.com"
-                type="email"
-              />
-            </label>
-          </div>
-          <label htmlFor="input-password">
-            <h2>Senha</h2>
-            <input
-              className="bg-evolutionIce border-2 border-neutral-400 rounded-md w-[45rem] h-10 rounded-5xl px-5"
-              id="input-password"
-              placeholder="liasouza123"
-              type="password"
-              name="password"
-            />
-          </label>
-          <div>
-            <h2>Sua Trilha</h2>
-            <select className="bg-evolutionIce border-2 border-neutral-400 rounded-md w-[20rem] h-10 rounded-5xl px-4">
-              <option> Dev FullStack </option>
-              <option> UX/UI </option>
-              <option> Quality Assurance </option>
-            </select>
-          </div>
-        </form>
-      </section>
-    </div>
+    <form className='h-[35rem] flex flex-col gap-8'>
+      <div className='flex gap-16'>
+        <InputText
+          type='text'
+          label='Nome'
+          placeholder={user.firstName}
+          id='nome'
+          className={'grow-1'}
+        />
+        <InputText
+          type='text'
+          label='Sobrenome'
+          placeholder={user.lastName}
+          id='sobrenome'
+          className={'grow-1'}
+        />
+      </div>
+      <InputText type='email' label='E-mail' placeholder={user.email} />
+      <InputText type='password' label='Senha' placeholder='senha' />
+      <InputSelect
+        label={'Sua trilha'}
+        defaultOption={user.currentRoadmap}
+        options={roadmaps}
+        id='roadmap'
+      />
+    </form>
   );
 }
 
-export default Profile;
+export default EditProfile;
