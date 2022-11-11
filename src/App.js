@@ -18,7 +18,7 @@ function App() {
       <div className='grow-1 max-w-xs'>
         <Sidebar setView={setView} view={view} />
       </div>
-      <main className='grow-4 py-20 pl-16'>
+      <main className='grow-4 pt-20 pb-6 pl-16 overflow-y-auto overflow-x-hidden'>
         <AnimatePresence exitBeforeEnter>
           <motion.div
             key={view}

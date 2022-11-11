@@ -17,7 +17,7 @@ function Progress() {
   }, [progress]);
 
   return (
-    <div className='flex flex-col gap-8'>
+    <div className='flex flex-col gap-4'>
       <h2 className='font-medium text-2xl' style={{ color: '#181B1A' }}>
         Seu progresso
       </h2>

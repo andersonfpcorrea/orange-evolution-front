@@ -4,7 +4,7 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 
 function Home() {
   return (
-    <div className='flex flex-col gap-16'>
+    <div className='flex flex-col gap-12'>
       <SearchBar />
       <Progress />
       <Recommended />
