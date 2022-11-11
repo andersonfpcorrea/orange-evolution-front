@@ -4,7 +4,10 @@ function SearchFilters({ filters }) {
   return (
     <div className='flex gap-14'>
       {filters.map((f) => (
-        <div className='relative border-[1px] rounded-2xl border-orangeGrey'>
+        <div
+          className='relative border-[1px] rounded-2xl border-orangeGrey'
+          key={f.name}
+        >
           <MdFilterList className='absolute right-4 top-2 pointer-events-none' />
           <select
             name={f.name}
@@ -12,7 +15,9 @@ function SearchFilters({ filters }) {
           >
             <option value=''>{f.name}</option>
             {f.options.map((opt) => (
-              <option value={opt}>{opt}</option>
+              <option value={opt} key={opt}>
+                {opt}
+              </option>
             ))}
           </select>
         </div>
