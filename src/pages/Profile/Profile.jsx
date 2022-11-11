@@ -4,6 +4,7 @@ import Button from '../../components/Button/Button';
 import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import BackNavArrow from '../../components/BackNavArrow/BackNavArrow';
 import EditProfile from '../../components/EditProfile/EditProfile';
+import Animate from '../../components/Animate/Animate';
 
 function Profile() {
   const [view, setView] = useState('card');
@@ -19,10 +20,15 @@ function Profile() {
         <h2 className='text-3xl font-medium'>
           {view === 'card' ? 'Meu perfil' : 'Editar perfil'}
         </h2>
+
         {view === 'card' ? (
-          <ProfileCard user={user} />
+          <Animate id='1'>
+            <ProfileCard user={user} />
+          </Animate>
         ) : (
-          <EditProfile user={user} roadmaps={roadmaps} />
+          <Animate id='2'>
+            <EditProfile user={user} roadmaps={roadmaps} />
+          </Animate>
         )}
 
         <div className='flex justify-around'>
