@@ -4,7 +4,7 @@ import { MdModeEdit } from 'react-icons/md';
 
 function ProfileCard({ user }) {
   return (
-    <figure className='flex flex-col gap-8 border-solid border-[1px] border-evolutionGrey'>
+    <figure className='flex flex-col gap-8 border-solid border-[1px] border-evolutionGrey h-[35rem]'>
       <div
         className='w-full h-64 relative'
         style={{

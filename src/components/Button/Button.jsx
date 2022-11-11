@@ -1,4 +1,5 @@
-function Button({ text, outline = false, type = 'button' }) {
+function Button({ text, outline = false, type = 'button', onClick }) {
+  console.log(onClick);
   return (
     <button
       type={type}
@@ -7,6 +8,7 @@ function Button({ text, outline = false, type = 'button' }) {
           ? 'border-evolution border-solid border-[1px] text-evolution'
           : 'bg-evolution border-none text-white'
       } rounded-md h-12 w-36`}
+      onClick={onClick}
     >
       {text}
     </button>
