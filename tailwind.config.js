@@ -5,6 +5,17 @@ module.exports = {
     extend: {
       colors: {
         evolution: '#FB6D3A',
+        evolutionGrey: '#B3B6B6',
+      },
+      flexGrow: {
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 8,
       },
     },
   },
