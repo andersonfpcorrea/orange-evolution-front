@@ -1,39 +1,26 @@
-import { useState } from 'react';
-import SearchResults from './SearchResults';
-import style from './SearchBar.module.css';
+import { useContext } from 'react';
+import AppContext from '../../context/context';
+import { FiSearch } from 'react-icons/fi';
 
 function SearchBar() {
-  const [data, setData] = useState([]);
-
-  const handleInputChange = (e) => {
-    e.preventDefault();
-    console.log(e.target.value);
-    const { value } = e.target;
-
-    if (!value) {
-      setData([]);
-      return;
-    }
-
-    const urlCourses = `https://orange-evolution.up.railway.app/courses?q=${value}`;
-
-    fetch(urlCourses)
-      .then((response) => response.json())
-      .then(({ data }) => setData(data));
-  };
+  const {
+    user: { firstName },
+  } = useContext(AppContext);
 
   return (
-    <div className={style.container}>
-      <form>
-        <label htmlFor='search'>Boas vindas, Lia</label>
+    <div className='flex flex-col gap-8'>
+      <h2 className='text-2xl'>
+        Boas vindas, <span className='font-medium'>{firstName}</span>
+      </h2>
+      <label htmlFor='search' className='relative'>
+        <FiSearch className='absolute top-[1.1rem] left-6 h-5 w-5' />
         <input
-          name='search'
+          type='text'
           id='search'
-          placeholder='Procure mais conteúdos aqui'
-          onChange={handleInputChange}
+          className='bg-evolutionIce w-[50rem] h-14 rounded-2xl px-16'
+          placeholder='Procure mais conteúdos'
         />
-      </form>
-      <SearchResults data={data} />
+      </label>
     </div>
   );
 }

@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         evolution: '#FB6D3A',
         evolutionGrey: '#B3B6B6',
+        evolutionIce: '#F6F6F5',
       },
       flexGrow: {
         1: 1,

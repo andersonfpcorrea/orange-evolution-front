@@ -24,7 +24,7 @@ function Sidebar({ setView, view }) {
     'Meus cursos',
     'Meu perfil',
   ];
-  const routes = ['root', 'course', 'roadmaps', 'myCourses', 'profile'];
+  const routes = ['home', 'course', 'roadmaps', 'myCourses', 'profile'];
 
   return (
     <nav className={style.sidebar}>

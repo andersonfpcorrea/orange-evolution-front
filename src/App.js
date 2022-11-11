@@ -1,25 +1,24 @@
 import Sidebar from './components/Sidebar/Sidebar';
-import Root from './pages/Root/Root';
-import style from './App.module.css';
+import Home from './pages/Home/Home';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import MyCourses from './pages/MyCourses/MyCourses';
 
 function App() {
-  const [view, setView] = useState('root');
+  const [view, setView] = useState('home');
   const views = {
-    root: <Root />,
+    home: <Home />,
     course: <div>Courses</div>,
     roadmaps: <div>Roadmaps</div>,
     myCourses: <MyCourses />,
     profile: <div>Profile</div>,
   };
   return (
-    <div className={style.page}>
-      <div className={style.sidebar}>
+    <div className='flex h-screen'>
+      <div className='grow-1 max-w-xs'>
         <Sidebar setView={setView} view={view} />
       </div>
-      <main className={style.main}>
+      <main className='grow-4 py-20 pl-16'>
         <AnimatePresence exitBeforeEnter>
           <motion.div
             key={view}
