@@ -1,6 +1,7 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import PropTypes from "prop-types";
+import { AnimatePresence, motion } from "framer-motion";
 
-function Animate({ children, id, className }) {
+function Animate({ children, id, className = "" }) {
   return (
     <AnimatePresence exitBeforeEnter>
       <motion.div
@@ -16,5 +17,15 @@ function Animate({ children, id, className }) {
     </AnimatePresence>
   );
 }
+
+Animate.propTypes = {
+  children: PropTypes.node.isRequired,
+  id: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+Animate.defaultProps = {
+  className: "",
+};
 
 export default Animate;
