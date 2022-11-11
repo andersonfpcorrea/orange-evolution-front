@@ -4,6 +4,7 @@ import {
   progress,
   currentRoadmapCourses,
   currentRoadmapVideos,
+  roadmaps,
 } from '../mockUserData';
 
 const store = {
@@ -11,6 +12,7 @@ const store = {
   progress,
   currentRoadmapCourses,
   currentRoadmapVideos,
+  roadmaps,
 };
 
 const AppProvider = ({ children }) => {

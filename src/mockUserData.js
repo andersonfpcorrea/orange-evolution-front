@@ -981,3 +981,39 @@ export const courses = {
     },
   ],
 };
+
+export const roadmaps = {
+  quantity: 5,
+  roadmaps: [
+    {
+      id: 1,
+      title: 'Desenvolvimento Full Stack',
+      createdAt: '2022-11-02T15:00:30.000Z',
+      updatedAt: '2022-11-02T16:00:30.000Z',
+    },
+    {
+      id: 2,
+      title: 'UX/UI Design',
+      createdAt: '2022-11-02T15:00:30.000Z',
+      updatedAt: '2022-11-02T16:00:30.000Z',
+    },
+    {
+      id: 3,
+      title: 'Quality Assurance',
+      createdAt: '2022-11-02T15:00:30.000Z',
+      updatedAt: '2022-11-02T16:00:30.000Z',
+    },
+    {
+      id: 4,
+      title: 'O início',
+      createdAt: '2022-11-02T15:00:30.000Z',
+      updatedAt: '2022-11-02T16:00:30.000Z',
+    },
+    {
+      id: 5,
+      title: 'Opcional',
+      createdAt: '2022-11-02T15:00:30.000Z',
+      updatedAt: '2022-11-02T16:00:30.000Z',
+    },
+  ],
+};

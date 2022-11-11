@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import AppContext from '../../context/context';
 import Contents from '../../components/Contents/Contexts';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import SearchFilters from '../../components/SearchFilters/SearchFilters';
@@ -17,6 +19,10 @@ function Explore() {
       options: ['Até 10 min', 'Até 60 min', '+ 1 hora'],
     },
   ];
+
+  const {
+    currentRoadmapCourses: { courses },
+  } = useContext(AppContext);
   return (
     <div className='flex flex-col gap-12'>
       <div className='flex flex-col gap-8'>
@@ -26,7 +32,11 @@ function Explore() {
         />
         <SearchFilters filters={filters} />
       </div>
-      <Contents />
+      <Contents
+        heading='Repositório de Conteúdos'
+        type={'course'}
+        data={courses}
+      />
     </div>
   );
 }
