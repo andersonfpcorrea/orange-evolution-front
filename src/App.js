@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import MyCourses from './pages/MyCourses/MyCourses';
 import Explore from './pages/Explore/Explore';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   const [view, setView] = useState('home');
@@ -12,7 +13,7 @@ function App() {
     explore: <Explore />,
     roadmaps: <div>Roadmaps</div>,
     myCourses: <MyCourses />,
-    profile: <div>Profile</div>,
+    profile: <Profile />,
   };
   return (
     <div className='flex h-screen'>
