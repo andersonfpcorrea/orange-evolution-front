@@ -2,7 +2,6 @@ function InputSelect({
   options = [],
   defaultOption,
   label,
-  placeholder,
   id = label,
   className,
 }) {
@@ -10,14 +9,14 @@ function InputSelect({
     <div className={`flex justify-between ${className}`}>
       <div className='flex flex-col gap-2 text-lg font-light w-full'>
         <label htmlFor={id}>{label}</label>
-        <select
-          id={id}
-          className='border-[1px] rounded-lg p-4 bg-white'
-          placeholder={placeholder}
-        >
+        <select id={id} className='border-[1px] rounded-lg p-4 bg-white'>
           {options.map((opt) => (
-            <option selected={opt === defaultOption} value={opt}>
-              {opt}
+            <option
+              key={opt.id}
+              selected={opt.title === defaultOption}
+              value={opt.title}
+            >
+              {opt.title}
             </option>
           ))}
         </select>

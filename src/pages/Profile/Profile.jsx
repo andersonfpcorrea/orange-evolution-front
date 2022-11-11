@@ -1,14 +1,16 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import AppContext from '../../context/context';
 import Button from '../../components/Button/Button';
 import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import BackNavArrow from '../../components/BackNavArrow/BackNavArrow';
 import EditProfile from '../../components/EditProfile/EditProfile';
-import { useState } from 'react';
 
 function Profile() {
   const [view, setView] = useState('card');
-  const { user } = useContext(AppContext);
+  const {
+    user,
+    roadmaps: { roadmaps },
+  } = useContext(AppContext);
 
   return (
     <div className='max-w-4xl'>
@@ -17,7 +19,11 @@ function Profile() {
         <h2 className='text-3xl font-medium'>
           {view === 'card' ? 'Meu perfil' : 'Editar perfil'}
         </h2>
-        {view === 'card' ? <ProfileCard user={user} /> : <EditProfile />}
+        {view === 'card' ? (
+          <ProfileCard user={user} />
+        ) : (
+          <EditProfile user={user} roadmaps={roadmaps} />
+        )}
 
         <div className='flex justify-around'>
           <Button
@@ -27,7 +33,9 @@ function Profile() {
           />
           <Button
             text={view === 'card' ? 'Editar' : 'Salvar'}
-            onClick={() => setView('form')}
+            onClick={
+              view === 'card' ? () => setView('form') : () => setView('card')
+            }
           />
         </div>
       </div>
