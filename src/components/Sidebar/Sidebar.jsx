@@ -4,16 +4,16 @@ import {
   MdComputer,
   MdPerson,
   MdExitToApp,
+  MdOutlineListAlt,
 } from "react-icons/md";
 import { motion } from "framer-motion";
-import style from "./Sidebar.module.css";
 import logo from "../../assets/logo.png";
 
 function Sidebar({ setView, view }) {
   const icons = [
     <MdHome key={0} />,
     <MdRadar key={1} />,
-    <MdRadar key={2} />,
+    <MdOutlineListAlt key={2} />,
     <MdComputer key={3} />,
     <MdPerson key={4} />,
   ];
@@ -27,10 +27,10 @@ function Sidebar({ setView, view }) {
   const routes = ["home", "explore", "roadmaps", "myCourses", "profile"];
 
   return (
-    <nav className={style.sidebar}>
-      <div className={style.sidebar__top}>
-        <img src={logo} alt="Orange Juice logo" className={style.logo} />
-        <ul className={style.sidebar__list}>
+    <nav className="flex flex-col justify-between items-center bg-evolution text-white h-full text-xl py-[4.5rem]">
+      <div className="flex flex-col items-center gap-20 w-full">
+        <img src={logo} alt="Orange Juice logo" className="w-32 h-24" />
+        <ul className="flex flex-col gap-6 w-full">
           {content.map((el, i) => {
             const liActive = (
               <li
@@ -61,7 +61,7 @@ function Sidebar({ setView, view }) {
           })}
         </ul>
       </div>
-      <div className={style.sidebar__down}>
+      <div className="flex items-center gap-4 self-start ml-12 cursor-pointer">
         <MdExitToApp />
         <p>Sair</p>
       </div>

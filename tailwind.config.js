@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        evolution: '#FB6D3A',
-        evolutionGrey: '#B3B6B6',
-        evolutionIce: '#F6F6F5',
+        evolution: "#FB6D3A",
+        evolutionGrey: "#B3B6B6",
+        evolutionIce: "#F6F6F5",
       },
       flexGrow: {
         1: 1,

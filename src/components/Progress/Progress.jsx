@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import style from "./Progress.module.css";
 
 function Progress() {
   const [progress, setProgress] = useState(0);
@@ -21,21 +20,21 @@ function Progress() {
         Seu progresso
       </h2>
       <div className="flex gap-12" style={{ color: "#333" }}>
-        <div className={style["progress-container"]}>
+        <div className="grid place-items-center pt-4">
           <div
-            className={style["progress-bar"]}
+            className="h-48 w-48 rounded-full grid place-content-center relative before:bg-white before:rounded-full before:h-40 before:w-40 before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:top-1/2 before:left-1/2"
             style={{
               background: `conic-gradient(
                 #FB6D3A ${progress * 3.6}deg,
                 #ddd ${progress * 3.6}deg`,
             }}
           >
-            <div className={style["progress-value"]}>{`${progress}%`}</div>
+            <div className="isolate text-5xl text-evolutionGrey">{`${progress}%`}</div>
           </div>
         </div>
         <div className="flex flex-col gap-6 p-8 justify-start">
           <p>
-            Você está na formação{" "}
+            Você está na formação
             <span className="font-semibold">Desenvolvimento Full-Stack</span>
           </p>
           <p>
