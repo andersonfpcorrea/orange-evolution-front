@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import AppContext from '../../context/context';
 import Contents from '../../components/Contents/Contexts';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import SearchFilters from '../../components/SearchFilters/SearchFilters';
@@ -9,6 +11,11 @@ function Roadmap() {
       options: ['Hard skill', 'Soft skill'],
     },
   ];
+
+  const {
+    roadmaps: { roadmaps },
+  } = useContext(AppContext);
+
   return (
     <div className='flex flex-col gap-12'>
       <div className='flex flex-col gap-8'>
@@ -18,7 +25,11 @@ function Roadmap() {
         />
         <SearchFilters filters={filters} />
       </div>
-      <Contents />
+      <Contents
+        heading={'Respositório de Trilhas'}
+        type={'roadmap'}
+        data={roadmaps}
+      />
     </div>
   );
 }
