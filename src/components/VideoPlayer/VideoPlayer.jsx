@@ -14,7 +14,7 @@ function VideoPlayer({ video }) {
       <iframe
         width='800'
         height='450'
-        style={{ borderRadius: '1rem' }}
+        style={{ borderRadius: '1rem', margin: '-10px' }}
         src={`https://www.youtube.com/embed/${videoID}`}
         title='YouTube video player'
         frameBorder='0'
@@ -82,7 +82,7 @@ function VideoPlayer({ video }) {
   return (
     <section className='flex flex-col gap-8'>
       <h2 className='text-3xl font-medium'>{user.currentRoadmap}</h2>
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-8'>
         <AnimatePresence exitBeforeEnter>
           <motion.div
             key={video.id}
@@ -90,6 +90,7 @@ function VideoPlayer({ video }) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
+            className='flex items-start'
           >
             <Player />
           </motion.div>
