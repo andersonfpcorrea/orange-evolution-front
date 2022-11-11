@@ -22,14 +22,12 @@ function Recommended() {
   return (
     <div className='flex flex-col gap-8 w-[50rem]'>
       <h2 className='font-medium text-2xl'>Recomendado para você</h2>
-      {/* <div className='flex gap-4 flex-wrap'> */}
       <AliceCarousel
         mouseTracking
         items={items}
         responsive={responsive}
         controlsStrategy='alternate'
       />
-      {/* </div> */}
     </div>
   );
 }

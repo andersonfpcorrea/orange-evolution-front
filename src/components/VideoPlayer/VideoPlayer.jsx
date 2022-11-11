@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import AppContext from '../../context/context';
 import OrangeLogo from '../../assets/black-logo.jpg';
 import { BsYoutube } from 'react-icons/bs';
-import { AnimatePresence, motion } from 'framer-motion';
+import Animate from '../Animate/Animate';
 
 function VideoPlayer({ video }) {
   const videoID = video.url.slice(video.url.indexOf('=') + 1);
@@ -83,18 +83,9 @@ function VideoPlayer({ video }) {
     <section className='flex flex-col gap-8'>
       <h2 className='text-3xl font-medium'>{user.currentRoadmap}</h2>
       <div className='flex flex-col gap-8'>
-        <AnimatePresence exitBeforeEnter>
-          <motion.div
-            key={video.id}
-            initial={{ x: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className='flex items-start'
-          >
-            <Player />
-          </motion.div>
-        </AnimatePresence>
+        <Animate id={video.id} className='flex items-start'>
+          <Player />
+        </Animate>
         <div className='flex flex-col gap-6'>
           <InfoCard />
           <hr className='w-full' />
