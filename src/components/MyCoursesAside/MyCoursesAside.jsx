@@ -83,7 +83,7 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
   }
 
   return (
-    <aside className="p-4 min-[1150px]:p-0 flex flex-col min-[1150px]:gap-12 ">
+    <aside className="pt-4 min-[360px]:p-4 min-[1150px]:p-0 flex flex-col min-[1150px]:gap-12 ">
       <h2 className="hidden min-[1150px]:block text-2xl font-medium pl-8">
         Trilha
       </h2>

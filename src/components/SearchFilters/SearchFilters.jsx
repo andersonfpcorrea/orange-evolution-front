@@ -2,7 +2,7 @@ import { MdFilterList } from "react-icons/md";
 
 function SearchFilters({ filters }) {
   return (
-    <div className="flex gap-14">
+    <div className="flex max-[959px]:justify-around min-[960px]:gap-14">
       {filters.map((f) => (
         <div
           className="relative border-[1px] rounded-2xl border-orangeGrey"

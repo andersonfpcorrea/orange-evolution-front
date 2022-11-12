@@ -35,7 +35,7 @@ function Progress() {
             <div className="isolate text-5xl text-evolutionGrey">{`${progress}%`}</div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 p-8 justify-start text-lg">
+        <div className="flex flex-col  min-[960px]:gap-6 justify-around min-[960px]:justify-start text-lg  pt-4 pl-4 min-[960px]:p-8">
           <p>
             Você está na formação&nbsp;
             <span className="font-semibold">{currentRoadmap}</span>

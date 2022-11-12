@@ -24,7 +24,7 @@ function VideoPlayer({ video }) {
 
   function InfoCard() {
     return (
-      <div className="flex gap-4">
+      <div className="flex gap-4 relative">
         <div className="h-16 w-16 rounded-full grid place-items-center bg-evolution after:block after:absolute after:bg-white after:h-14 after:w-14 after:rounded-full">
           <img
             src={OrangeLogo}
