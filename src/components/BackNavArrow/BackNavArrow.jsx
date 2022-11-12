@@ -3,7 +3,9 @@ import { MdKeyboardBackspace } from "react-icons/md";
 
 function BackNavArrow({ className }) {
   return (
-    <div className={`fixed top-[-48px] left-[-42px] ${className}`}>
+    <div
+      className={`fixed max-[959px]:top-[-30px] max-[959px]:left-[-30px] top-[-48px] left-[-42px] ${className}`}
+    >
       <MdKeyboardBackspace style={{ width: "24px", height: "24px" }} />
     </div>
   );
