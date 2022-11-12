@@ -12,7 +12,9 @@ import logo from "../../assets/logo.png";
 function Sidebar({ setView, view }) {
   const myCourses = view === "myCourses";
 
-  const iconsConditionalClasses = myCourses ? "h-8 w-8 transition-all" : "";
+  const iconsConditionalClasses = myCourses
+    ? "h-8 w-8 transition-all"
+    : "max-[1070px]:h-8 max-[1070px]:w-8 max-[1070px]:transition-all";
 
   const icons = [
     <MdHome key={0} className={iconsConditionalClasses} />,
@@ -33,21 +35,23 @@ function Sidebar({ setView, view }) {
   return (
     <nav
       className={`flex flex-col justify-between items-center bg-evolution text-white ${
-        myCourses ? "w-24" : "w-80"
+        myCourses ? "w-24" : "w-24 min-[1070px]:w-80"
       } h-full text-xl py-[4.5rem]`}
     >
       <div className="flex flex-col items-center gap-20 w-full">
         <img
           src={logo}
           alt="Orange Juice logo"
-          className={myCourses ? `w-14` : `w-32`}
+          className={myCourses ? `w-14` : `w-14 min-[1070px]:w-32`}
         />
         <ul className="flex flex-col gap-6 w-full">
           {content.map((el, i) => {
             const liActive = (
               <li
                 key={el}
-                className={`cursor-pointer pl-4 ${!myCourses && "pl-12"}`}
+                className={`cursor-pointer pl-4 ${
+                  !myCourses && "min-[1070px]:pl-12"
+                }`}
                 onClick={() => setView(routes[i])}
               >
                 <motion.div
@@ -58,7 +62,9 @@ function Sidebar({ setView, view }) {
                 >
                   {icons[i]}
                   {view !== "myCourses" && (
-                    <p className="whitespace-nowrap">{el}</p>
+                    <p className="whitespace-nowrap hidden min-[1070px]:block">
+                      {el}
+                    </p>
                   )}
                 </motion.div>
               </li>
@@ -68,11 +74,15 @@ function Sidebar({ setView, view }) {
                 key={el}
                 className={`flex items-center gap-4 py-2 cursor-pointer ${
                   myCourses && "justify-center"
-                } ${!myCourses && "pl-16"}`}
+                } ${
+                  !myCourses && "min-[1070px]:pl-16"
+                } max-[1070px]:justify-center`}
                 onClick={() => setView(routes[i])}
               >
                 {icons[i]}
-                {view !== "myCourses" && <p>{el}</p>}
+                {view !== "myCourses" && (
+                  <p className="hidden min-[1070px]:block">{el}</p>
+                )}
               </li>
             );
             return view === routes[i] ? liActive : liInactive;
