@@ -1,9 +1,7 @@
-// import style from './VideoPlayer.module.css';
 import { useContext } from "react";
 import { BsYoutube } from "react-icons/bs";
 import AppContext from "../../context/context";
 import OrangeLogo from "../../assets/black-logo.jpg";
-import Animate from "../Animate/Animate";
 
 function VideoPlayer({ video }) {
   const videoID = video.url.slice(video.url.indexOf("=") + 1);
@@ -13,7 +11,7 @@ function VideoPlayer({ video }) {
     return (
       <div className="w-full">
         <iframe
-          className="w-full h-[40vw] min-[1150px]:w-[52vw] min-[1150px]:h-[25vw] xl:w-[55vw] xl:h-[30vw]"
+          className="w-full h-[50vw] min-[959px]:h-[40vw] min-[1150px]:w-[52vw] min-[1150px]:h-[25vw] xl:w-[55vw] xl:h-[30vw]"
           style={{ borderRadius: "1rem", margin: "-10px" }}
           src={`https://www.youtube.com/embed/${videoID}`}
           title="YouTube video player"
@@ -90,9 +88,7 @@ function VideoPlayer({ video }) {
     <section className="flex flex-col gap-12">
       <h2 className="text-3xl font-medium">{user.currentRoadmap}</h2>
       <div className="flex flex-col gap-8">
-        <Animate id={video.id} className="flex items-start">
-          <Player />
-        </Animate>
+        <Player />
         <div className="flex flex-col gap-6">
           <InfoCard />
           <hr className="w-full" />
