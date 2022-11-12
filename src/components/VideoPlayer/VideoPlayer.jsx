@@ -11,9 +11,9 @@ function VideoPlayer({ video }) {
 
   function Player() {
     return (
-      <div>
+      <div className="w-full">
         <iframe
-          className="w-[55vw] h-[30vw]"
+          className="w-full h-[40vw] min-[1150px]:w-[52vw] min-[1150px]:h-[25vw] xl:w-[55vw] xl:h-[30vw]"
           style={{ borderRadius: "1rem", margin: "-10px" }}
           src={`https://www.youtube.com/embed/${videoID}`}
           title="YouTube video player"
@@ -36,9 +36,13 @@ function VideoPlayer({ video }) {
           />
         </div>
         <div className="flex flex-col gap justify-around">
-          <h3 className="text-2xl font-medium">{video.course}</h3>
+          <h3 className="text-xl min-[1150px]:text-2xl font-medium">
+            {video.course}
+          </h3>
           <div className="flex gap-2 items-center">
-            <p className="text-evolutionGrey font-medium">{video.author}</p>
+            <p className="text-evolutionGrey font-medium text-sm min-[1150px]:text-base">
+              {video.author}
+            </p>
             <BsYoutube fill="red" />
           </div>
         </div>
@@ -69,7 +73,7 @@ function VideoPlayer({ video }) {
     ];
 
     return (
-      <div className="flex flex-col">
+      <div className="hidden min-[1150px]:flex min-[1150px]:flex-col min-[1150px]:visible">
         {paragraphs.map((el, i) => (
           <p key={anchors[i].text}>
             {el}
