@@ -6,7 +6,8 @@ import formatTimeString from "../../utils/formatTimeString";
 function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
   const { videos } = courseList;
 
-  const activeStyle = "bg-evolution bg-opacity-40 rounded-l-full opacity-80";
+  const activeStyle =
+    "bg-evolution bg-opacity-40 rounded-lg min-[1150px]:rounded-l-full opacity-80";
 
   const listIconStyle = {
     height: "1rem",
@@ -19,7 +20,7 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
 
   function VideosList() {
     return (
-      <ul className="flex flex-col">
+      <ul className="flex flex-col text-lg gap-2 min-[1150px]:gap-0 min-[1150px]:text-xs">
         {videos.map((video) => {
           const liActive = (
             <li>
@@ -31,21 +32,17 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
               >
                 <motion.div
                   layoutId="selected"
-                  className={`flex items-center gap-2 py-2 pl-3 ${activeStyle}`}
+                  className={`flex items-center gap-6 min-[1150px]:gap-2 py-2 pl-3 ${activeStyle}`}
                 >
                   <div className={listIconDivClasses}>
                     <AiOutlineMenu style={listIconStyle} />
                   </div>
                   <div className="flex flex-col justify-between">
-                    <p className="font-medium text-xs 2xl:text-base">
-                      {video.course}
-                    </p>
+                    <p className="font-medium  2xl:text-base">{video.course}</p>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs">{video.type}</span>
+                      <span>{video.type}</span>
                       <BsDot />
-                      <span className="text-xs">
-                        {formatTimeString(video.length)}
-                      </span>
+                      <span>{formatTimeString(video.length)}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -57,7 +54,7 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
             <li>
               <button
                 type="button"
-                className="flex items-center gap-2 py-2 pl-3 w-full"
+                className="flex items-center gap-6 min-[1150px]:gap-2 py-2 pl-3 w-full"
                 key={video.id}
                 onClick={() => setSelectedVideo(video)}
               >
@@ -65,15 +62,11 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
                   <AiOutlineMenu style={listIconStyle} />
                 </div>
                 <div className="flex flex-col justify-between">
-                  <p className="font-medium text-xs 2xl:text-base">
-                    {video.course}
-                  </p>
+                  <p className="font-medium  2xl:text-base">{video.course}</p>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs">{video.type}</span>
+                    <span>{video.type}</span>
                     <BsDot />
-                    <span className="text-xs">
-                      {formatTimeString(video.length)}
-                    </span>
+                    <span>{formatTimeString(video.length)}</span>
                   </div>
                 </div>
               </button>
@@ -87,8 +80,10 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
   }
 
   return (
-    <aside className="flex flex-col gap-12">
-      <h2 className="text-2xl font-medium pl-8">Trilha</h2>
+    <aside className="p-4 min-[1150px]:p-0 flex flex-col min-[1150px]:gap-12 ">
+      <h2 className="hidden min-[1150px]:block text-2xl font-medium pl-8">
+        Trilha
+      </h2>
       <VideosList />
     </aside>
   );

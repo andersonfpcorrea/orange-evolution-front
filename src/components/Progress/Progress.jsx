@@ -4,7 +4,7 @@ import AppContext from "../../context/context";
 function Progress() {
   const [progress, setProgress] = useState(0);
   const {
-    user: { progress: userProgress },
+    user: { currentRoadmap, progress: userProgress },
   } = useContext(AppContext);
   const speed = 30;
 
@@ -35,10 +35,10 @@ function Progress() {
             <div className="isolate text-5xl text-evolutionGrey">{`${progress}%`}</div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 p-8 justify-start">
+        <div className="flex flex-col gap-6 p-8 justify-start text-lg">
           <p>
-            Você está na formação
-            <span className="font-semibold">Desenvolvimento Full-Stack</span>
+            Você está na formação&nbsp;
+            <span className="font-semibold">{currentRoadmap}</span>
           </p>
           <p>
             Consuma conteúdos para progredir no{" "}

@@ -9,7 +9,7 @@ function MyCoursesMain() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
   return (
-    <div className="flex w-full justify-between">
+    <div className="flex flex-col w-full min-[1150px]:flex-row min-[1150px]:justify-between">
       <div>
         <VideoPlayer video={selectedVideo} />
       </div>
