@@ -11,8 +11,7 @@ function VideoPlayer({ video }) {
     return (
       <div className="w-full">
         <iframe
-          className="w-full h-[50vw] min-[959px]:h-[40vw] min-[1150px]:w-[52vw] min-[1150px]:h-[25vw] xl:w-[55vw] xl:h-[30vw]"
-          style={{ borderRadius: "1rem", margin: "-10px" }}
+          className="w-full h-[50vw] min-[959px]:h-[40vw] min-[1150px]:w-[52vw] min-[1150px]:h-[25vw] xl:w-[55vw] xl:h-[30vw] rounded-2xl"
           src={`https://www.youtube.com/embed/${videoID}`}
           title="YouTube video player"
           frameBorder="0"
