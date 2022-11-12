@@ -20,7 +20,7 @@ function Animate({ children, id, className = "" }) {
 
 Animate.propTypes = {
   children: PropTypes.node.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   className: PropTypes.string,
 };
 

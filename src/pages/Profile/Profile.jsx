@@ -14,9 +14,9 @@ function Profile() {
   } = useContext(AppContext);
 
   return (
-    <div className="max-w-4xl">
+    <div className="w-full">
       <BackNavArrow />
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 w-full">
         <h2 className="text-3xl font-medium">
           {view === "card" ? "Meu perfil" : "Editar perfil"}
         </h2>

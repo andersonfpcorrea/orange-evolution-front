@@ -2,7 +2,7 @@ import { FiSearch } from "react-icons/fi";
 
 function SearchBar({ normalText, boldText }) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 w-full">
       <h2 className="text-2xl">
         {normalText}
         <span className="font-medium">{boldText}</span>
@@ -12,7 +12,7 @@ function SearchBar({ normalText, boldText }) {
         <input
           type="text"
           id="search"
-          className="bg-evolutionIce w-[50rem] h-14 rounded-2xl px-16"
+          className="bg-evolutionIce w-full h-14 rounded-2xl px-16"
           placeholder="Procure mais conteúdos"
         />
       </label>

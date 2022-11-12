@@ -9,7 +9,7 @@ function MyCoursesMain() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
   return (
-    <div className="flex w-full gap-8">
+    <div className="flex w-full justify-between">
       <div>
         <VideoPlayer video={selectedVideo} />
       </div>

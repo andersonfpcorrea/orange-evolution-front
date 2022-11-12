@@ -1,3 +1,10 @@
+import Lia from "./assets/Lia.png";
+import Ux from "./assets/UI-UX-Design.jpg";
+import Fullstack from "./assets/christopher-gower-m_HRfLhgABo-unsplash 1.png";
+import Qa from "./assets/body-quality-assurance (1).jpg";
+import Start from "./assets/Iniciando-uma-nova-jornada.jpg";
+import Opcional from "./assets/opcional (1).jpg";
+
 export const progress = {
   idUser: 1,
   courses: [
@@ -56,8 +63,9 @@ export const user = {
   firstName: "Lia",
   lastName: "Sousa",
   email: "liasousa@gmail.com",
-  photo: "https://i.ibb.co/rMxyrPq/Lia.png",
+  photo: Lia,
   currentRoadmap: "Desenvolvimento Full Stack",
+  progress: 25,
 };
 
 export const currentRoadmapVideos = {
@@ -989,30 +997,35 @@ export const roadmaps = {
     {
       id: 1,
       title: "Desenvolvimento Full Stack",
+      image: Fullstack,
       createdAt: "2022-11-02T15:00:30.000Z",
       updatedAt: "2022-11-02T16:00:30.000Z",
     },
     {
       id: 2,
       title: "UX/UI Design",
+      image: Ux,
       createdAt: "2022-11-02T15:00:30.000Z",
       updatedAt: "2022-11-02T16:00:30.000Z",
     },
     {
       id: 3,
       title: "Quality Assurance",
+      image: Qa,
       createdAt: "2022-11-02T15:00:30.000Z",
       updatedAt: "2022-11-02T16:00:30.000Z",
     },
     {
       id: 4,
       title: "O início",
+      image: Start,
       createdAt: "2022-11-02T15:00:30.000Z",
       updatedAt: "2022-11-02T16:00:30.000Z",
     },
     {
       id: 5,
       title: "Opcional",
+      image: Opcional,
       createdAt: "2022-11-02T15:00:30.000Z",
       updatedAt: "2022-11-02T16:00:30.000Z",
     },

@@ -13,8 +13,7 @@ function VideoPlayer({ video }) {
     return (
       <div>
         <iframe
-          width="800"
-          height="450"
+          className="w-[55vw] h-[30vw]"
           style={{ borderRadius: "1rem", margin: "-10px" }}
           src={`https://www.youtube.com/embed/${videoID}`}
           title="YouTube video player"
@@ -84,7 +83,7 @@ function VideoPlayer({ video }) {
   }
 
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-12">
       <h2 className="text-3xl font-medium">{user.currentRoadmap}</h2>
       <div className="flex flex-col gap-8">
         <Animate id={video.id} className="flex items-start">

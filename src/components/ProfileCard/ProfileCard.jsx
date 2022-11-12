@@ -32,7 +32,9 @@ function ProfileCard({ user, callback }) {
           </li>
           <li>
             <p className="font-medium text-lg">Progresso</p>
-            <p className="font-medium text-evolutionGrey">25% concluído</p>
+            <p className="font-medium text-evolutionGrey">
+              {user.progress}% concluído
+            </p>
           </li>
           <li>
             <p className="font-medium text-lg">Minha Trilha</p>
