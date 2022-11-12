@@ -11,7 +11,7 @@ function VideoPlayer({ video }) {
     return (
       <div className="w-full">
         <iframe
-          className="w-full h-[50vw] min-[959px]:h-[40vw] min-[1150px]:w-[52vw] min-[1150px]:h-[25vw] xl:w-[55vw] xl:h-[30vw] rounded-2xl"
+          className="w-full h-[50vw] min-[959px]:h-[40vw] min-[1150px]:w-[51vw] min-[1150px]:h-[25vw] xl:w-[55vw] xl:h-[30vw] rounded-2xl"
           src={`https://www.youtube.com/embed/${videoID}`}
           title="YouTube video player"
           frameBorder="0"
@@ -70,7 +70,8 @@ function VideoPlayer({ video }) {
     ];
 
     return (
-      <div className="hidden min-[1150px]:flex min-[1150px]:flex-col min-[1150px]:visible">
+      // <div className="hidden min-[1150px]:flex min-[1150px]:flex-col min-[1150px]:visible">
+      <div className="flex flex-col max-[1149px]:px-2 max-[1149px]:text-sm">
         {paragraphs.map((el, i) => (
           <p key={anchors[i].text}>
             {el}
@@ -88,7 +89,7 @@ function VideoPlayer({ video }) {
       <h2 className="text-3xl font-medium">{user.currentRoadmap}</h2>
       <div className="flex flex-col gap-8">
         <Player />
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col max-[1149px]:pb-4 gap-2 min-[1150px]:gap-6">
           <InfoCard />
           <hr className="w-full" />
           <OrangeJuiceLinks />
