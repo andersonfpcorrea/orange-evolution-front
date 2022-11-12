@@ -2,6 +2,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { BsDot } from "react-icons/bs";
 import { motion } from "framer-motion";
 import formatTimeString from "../../utils/formatTimeString";
+import formatStringSize from "../../utils/formatStringSize";
 
 function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
   const { videos } = courseList;
@@ -20,7 +21,7 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
 
   function VideosList() {
     return (
-      <ul className="flex flex-col text-lg gap-2 min-[1150px]:gap-0 min-[1150px]:text-xs">
+      <ul className="flex flex-col gap-2 min-[1150px]:gap-0 text-base min-[960px]:text-lg min-[1150px]:text-xs">
         {videos.map((video) => {
           const liActive = (
             <li>
@@ -38,7 +39,9 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
                     <AiOutlineMenu style={listIconStyle} />
                   </div>
                   <div className="flex flex-col justify-between">
-                    <p className="font-medium  2xl:text-base">{video.course}</p>
+                    <p className="font-medium  2xl:text-base">
+                      {formatStringSize(video.course)}
+                    </p>
                     <div className="flex items-center gap-2">
                       <span>{video.type}</span>
                       <BsDot />
