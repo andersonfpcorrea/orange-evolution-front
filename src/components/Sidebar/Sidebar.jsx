@@ -10,12 +10,16 @@ import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
 
 function Sidebar({ setView, view }) {
+  const myCourses = view === "myCourses";
+
+  const iconsConditionalClasses = myCourses ? "h-8 w-8 transition-all" : "";
+
   const icons = [
-    <MdHome key={0} />,
-    <MdRadar key={1} />,
-    <MdOutlineListAlt key={2} />,
-    <MdComputer key={3} />,
-    <MdPerson key={4} />,
+    <MdHome key={0} className={iconsConditionalClasses} />,
+    <MdRadar key={1} className={iconsConditionalClasses} />,
+    <MdOutlineListAlt key={2} className={iconsConditionalClasses} />,
+    <MdComputer key={3} className={iconsConditionalClasses} />,
+    <MdPerson key={4} className={iconsConditionalClasses} />,
   ];
   const content = [
     "Home",
@@ -27,43 +31,61 @@ function Sidebar({ setView, view }) {
   const routes = ["home", "explore", "roadmaps", "myCourses", "profile"];
 
   return (
-    <nav className="flex flex-col justify-between items-center bg-evolution text-white h-full text-xl py-[4.5rem]">
+    <nav
+      className={`flex flex-col justify-between items-center bg-evolution text-white ${
+        myCourses ? "w-24" : "w-80"
+      } h-full text-xl py-[4.5rem]`}
+    >
       <div className="flex flex-col items-center gap-20 w-full">
-        <img src={logo} alt="Orange Juice logo" className="w-32 h-24" />
+        <img
+          src={logo}
+          alt="Orange Juice logo"
+          className={myCourses ? `w-14` : `w-32`}
+        />
         <ul className="flex flex-col gap-6 w-full">
           {content.map((el, i) => {
             const liActive = (
               <li
                 key={el}
-                className="cursor-pointer"
+                className={`cursor-pointer pl-4 ${!myCourses && "pl-12"}`}
                 onClick={() => setView(routes[i])}
               >
                 <motion.div
+                  transition={{ duration: 0.5 }}
+                  animate={{ scale: 1 }}
                   layoutId="white"
-                  className="flex items-center gap-4 rounded-l-3xl ml-12 py-2 px-4 text-evolution bg-white"
+                  className="flex items-center gap-4 rounded-l-3xl py-2 pl-4 text-evolution bg-white"
                 >
                   {icons[i]}
-                  <p>{el}</p>
+                  {view !== "myCourses" && (
+                    <p className="whitespace-nowrap">{el}</p>
+                  )}
                 </motion.div>
               </li>
             );
             const liInactive = (
               <li
                 key={el}
-                className="flex items-center gap-4 ml-12 py-2 px-4 w-full cursor-pointer"
+                className={`flex items-center gap-4 py-2 cursor-pointer ${
+                  myCourses && "justify-center"
+                } ${!myCourses && "pl-16"}`}
                 onClick={() => setView(routes[i])}
               >
                 {icons[i]}
-                <p>{el}</p>
+                {view !== "myCourses" && <p>{el}</p>}
               </li>
             );
             return view === routes[i] ? liActive : liInactive;
           })}
         </ul>
       </div>
-      <div className="flex items-center gap-4 self-start ml-12 cursor-pointer">
-        <MdExitToApp />
-        <p>Sair</p>
+      <div
+        className={`flex items-center gap-4 self-start ${
+          myCourses ? "ml-8" : "ml-12"
+        } cursor-pointer`}
+      >
+        <MdExitToApp className={iconsConditionalClasses} />
+        {view !== "myCourses" && <p>Sair</p>}
       </div>
     </nav>
   );

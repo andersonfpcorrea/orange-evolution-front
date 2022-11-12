@@ -18,10 +18,10 @@ function App() {
   };
   return (
     <div className="flex h-screen">
-      <div className="grow-1 max-w-xs">
+      <div>
         <Sidebar setView={setView} view={view} />
       </div>
-      <main className="grow-4 pt-20 pb-6 pl-16 overflow-y-auto overflow-x-hidden">
+      <main className="py-20 px-16 overflow-y-auto w-full">
         <Animate id={view}>{views[view]}</Animate>
       </main>
     </div>

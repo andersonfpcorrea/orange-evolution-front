@@ -35,7 +35,7 @@ function Card({ course, roadmap }) {
     <div
       className="flex flex-col justify-between py-6 px-4 bg-red-300 text-sm h-64 w-96 rounded-2xl text-white font-medium cursor-pointer"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.70), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.75)), url('${Background}')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.70), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.75)), url('${roadmap?.image}')`,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
