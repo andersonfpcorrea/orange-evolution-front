@@ -1,6 +1,6 @@
 import Lia from "./assets/Lia.png";
 import Ux from "./assets/UI-UX-Design.jpg";
-import Fullstack from "./assets/christopher-gower-m_HRfLhgABo-unsplash 1.png";
+import Fullstack from "./assets/fullstack.jpg";
 import Qa from "./assets/body-quality-assurance (1).jpg";
 import Start from "./assets/Iniciando-uma-nova-jornada.jpg";
 import Opcional from "./assets/opcional (1).jpg";
