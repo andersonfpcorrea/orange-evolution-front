@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import {
   MdHome,
   MdRadar,
@@ -102,5 +103,11 @@ function Sidebar({ setView, view }) {
     </nav>
   );
 }
+
+Sidebar.propTypes = {
+  setView: PropTypes.func.isRequired,
+  view: PropTypes.oneOf(["home", "explore", "roadmaps", "myCourses", "profile"])
+    .isRequired,
+};
 
 export default Sidebar;
