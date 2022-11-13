@@ -1,0 +1,16 @@
+.scroll {
+  overflow-x: auto;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* For rendering the arrow buttons only when the client use desktop */
+@media (hover: none) {
+  .button {
+    display: none;
+  }
+}

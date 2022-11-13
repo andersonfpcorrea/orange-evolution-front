@@ -7,7 +7,7 @@ function Card({ course, roadmap }) {
   const courseCard = (
     <a
       href={course?.url}
-      className="flex flex-col justify-between py-6 px-4 bg-red-300 text-sm h-64 w-64 rounded-2xl text-white font-medium cursor-pointer"
+      className="flex flex-col justify-between py-6 px-4 text-sm h-64 w-64 rounded-2xl text-white font-medium cursor-pointer"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.70), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.75)), url('${Background}')`,
         backgroundPosition: "center",
