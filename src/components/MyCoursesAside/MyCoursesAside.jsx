@@ -24,7 +24,7 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
       <ul className="flex flex-col gap-2 min-[1150px]:gap-0 text-base min-[960px]:text-lg min-[1150px]:text-xs">
         {videos.map((video) => {
           const liActive = (
-            <li>
+            <li key={video.id}>
               <button
                 type="button"
                 key={video.id}
@@ -54,7 +54,7 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
           );
 
           const liInactive = (
-            <li>
+            <li key={video.id}>
               <button
                 type="button"
                 className="flex items-center gap-6 min-[1150px]:gap-2 py-2 pl-3 w-full"
@@ -84,7 +84,6 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
 
   return (
     <aside className="pt-4 min-[360px]:p-4 min-[1150px]:p-0 flex flex-col gap-4 min-[1150px]:gap-12 ">
-      {/* <h2 className="hidden min-[1150px]:block text-2xl font-medium pl-8"> */}
       <h2 className="text-2xl font-medium min-[1150px]:pl-8">Trilha</h2>
       <VideosList />
     </aside>

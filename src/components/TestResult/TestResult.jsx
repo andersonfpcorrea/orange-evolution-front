@@ -1,11 +1,13 @@
+import { useContext } from "react";
+import AppContext from "../../context/context";
 import ProgressCircle from "../ProgressCircle/ProgressCircle";
 import Recommended from "../Recommended/Recommended";
 
-function TestResult({ correctAnswers, totalOfQuestions }) {
-  const data = (correctAnswers / totalOfQuestions) * 100;
-  console.log(correctAnswers, totalOfQuestions);
+function TestResult() {
+  const { result, totalQuestions } = useContext(AppContext);
+  const data = (result / totalQuestions) * 100;
   return (
-    <div className="flex flex-col gap-20   max-w-2xl h-full">
+    <div className="flex flex-col gap-20 max-w-full h-full min-[1360px]:pl-[8vw]">
       <div>
         <h2 className="text-evolution text-3xl font-semibold">
           Sua trilha de sucesso está pronta!

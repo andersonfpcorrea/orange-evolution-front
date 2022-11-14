@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import InputText from "../../components/InputText/InputText";
 
-function Login({ callback }) {
+function Login() {
   const navigate = useNavigate();
 
   return (
@@ -25,16 +24,21 @@ function Login({ callback }) {
           />
         </fieldset>
         <div className="flex justify-around">
-          <Button text="Entrar" type="submit" onClick={() => navigate("/")} />
-          <Button text="Cadastrar" type="submit" outline onClick={callback} />
+          <Button
+            text="Entrar"
+            type="button"
+            onClick={() => navigate("/app/home")}
+          />
+          <Button
+            text="Cadastrar"
+            type="button"
+            outline
+            onClick={() => navigate("signup")}
+          />
         </div>
       </form>
     </div>
   );
 }
-
-Login.propTypes = {
-  callback: PropTypes.func.isRequired,
-};
 
 export default Login;
