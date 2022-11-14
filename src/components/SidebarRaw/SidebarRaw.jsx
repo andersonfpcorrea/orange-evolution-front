@@ -5,15 +5,6 @@ import logo from "../../assets/logo.png";
 function SidebarRaw({ view }) {
   const myCourses = view === "myCourses";
 
-  // const content = [
-  //   "Home",
-  //   "Explore conteúdos",
-  //   "Explore Trilhas",
-  //   "Meus cursos",
-  //   "Meu perfil",
-  // ];
-  // const routes = ["login", "signup", "roadmaps", "myCourses", "profile"];
-
   return (
     <nav
       className={`min-[960px]:flex flex-row min-[960px]:flex-col gap-12 items-center w-full bg-evolution text-white ${

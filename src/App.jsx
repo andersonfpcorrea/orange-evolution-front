@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AppContext from "./context/context";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Home from "./pages/Home/Home";
 import MyCourses from "./pages/MyCourses/MyCourses";
@@ -6,15 +7,26 @@ import Explore from "./pages/Explore/Explore";
 import Roadmap from "./pages/Roadmap/Roadmap";
 import Profile from "./pages/Profile/Profile";
 import Animate from "./components/Animate/Animate";
+import TestResult from "./components/TestResult/TestResult";
 
-function App() {
-  const [view, setView] = useState("home");
+function App({ defaultView = "home" }) {
+  const [view, setView] = useState(defaultView);
+  const {
+    result,
+    quiz: { questions },
+  } = useContext(AppContext);
   const views = {
     home: <Home />,
     explore: <Explore />,
     roadmaps: <Roadmap />,
     myCourses: <MyCourses />,
     profile: <Profile />,
+    testResult: (
+      <TestResult
+        correctAnswers={result}
+        totalOfQuestions={Object.keys(questions).length}
+      />
+    ),
   };
   return (
     <div className="flex flex-col-reverse min-[960px]:flex-row min-[960px]:h-screen">

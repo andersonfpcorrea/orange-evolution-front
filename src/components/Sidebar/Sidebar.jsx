@@ -106,8 +106,14 @@ function Sidebar({ setView, view }) {
 
 Sidebar.propTypes = {
   setView: PropTypes.func.isRequired,
-  view: PropTypes.oneOf(["home", "explore", "roadmaps", "myCourses", "profile"])
-    .isRequired,
+  view: PropTypes.oneOf([
+    "home",
+    "explore",
+    "roadmaps",
+    "myCourses",
+    "profile",
+    "testResult",
+  ]).isRequired,
 };
 
 export default Sidebar;

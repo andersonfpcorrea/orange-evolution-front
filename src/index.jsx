@@ -15,6 +15,10 @@ const router = createBrowserRouter([
     path: "/welcome",
     element: <AppWelcome />,
   },
+  {
+    path: "/testResult",
+    element: <App defaultView="testResult" />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

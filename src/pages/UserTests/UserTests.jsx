@@ -6,6 +6,7 @@ import ButtonRounded from "../../components/ButtonRounded/ButtonRounded";
 function UserTests({ callback, setResult, result, quiz }) {
   const [current, setCurrent] = useState(0);
   const { questions, options } = quiz;
+
   const checkAnswer = ({ target }) => {
     const { answer } = Object.fromEntries([...new FormData(target)]);
     if (Number(answer) === options[current].correct) setResult(result + 1);
