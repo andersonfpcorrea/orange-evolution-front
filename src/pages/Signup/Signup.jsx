@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useContext } from "react";
 import AppContext from "../../context/context";
 import InputText from "../../components/InputText/InputText";
@@ -29,8 +28,8 @@ function Signup({ callback }) {
         />
         <InputSelect
           label="Sua trilha"
-          id={roadmaps.title}
-          defaultOption={roadmaps[0].title}
+          id="roadmaps"
+          defaultOption="Desenvolvimento Full Stack"
           key={roadmaps.id}
           options={roadmaps}
         />
@@ -42,9 +41,5 @@ function Signup({ callback }) {
     </div>
   );
 }
-
-Signup.propTypes = {
-  callback: PropTypes.func.isRequired,
-};
 
 export default Signup;

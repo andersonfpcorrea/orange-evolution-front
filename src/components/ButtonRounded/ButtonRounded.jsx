@@ -14,9 +14,14 @@ function ButtonRounded({ onClick, type = "button", className }) {
 }
 
 ButtonRounded.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   type: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+ButtonRounded.defaultProps = {
+  onClick: () => {},
+  className: "",
 };
 
 export default ButtonRounded;

@@ -2,9 +2,8 @@ import PropTypes from "prop-types";
 // import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
 
-function SidebarRaw({ setView, view }) {
+function SidebarRaw({ view }) {
   const myCourses = view === "myCourses";
-  console.log(setView);
 
   // const content = [
   //   "Home",
@@ -38,15 +37,8 @@ function SidebarRaw({ setView, view }) {
 }
 
 SidebarRaw.propTypes = {
-  setView: PropTypes.func.isRequired,
-  view: PropTypes.oneOf([
-    "home",
-    "explore",
-    "roadmaps",
-    "myCourses",
-    "profile",
-    "login",
-  ]).isRequired,
+  view: PropTypes.oneOf(["login", "signup", "userTests", "testResult"])
+    .isRequired,
 };
 
 export default SidebarRaw;
