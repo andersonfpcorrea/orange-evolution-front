@@ -3,7 +3,7 @@ import { useContext } from "react";
 import AppContext from "../../context/context";
 import InputText from "../../components/InputText/InputText";
 import InputSelect from "../../components/InputSelect/InputSelect";
-import Button from "../../components/Button/Button";
+import ButtonRounded from "../../components/ButtonRounded/ButtonRounded";
 
 function Signup({ callback }) {
   const {
@@ -35,8 +35,8 @@ function Signup({ callback }) {
           options={roadmaps}
         />
 
-        <div className="flex justify-end">
-          <Button text="Entrar" type="submit" onClick={callback} />
+        <div className="flex justify-end p-2">
+          <ButtonRounded type="submit" onClick={callback} />
         </div>
       </form>
     </div>
