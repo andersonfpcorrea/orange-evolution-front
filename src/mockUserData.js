@@ -1031,3 +1031,30 @@ export const roadmaps = {
     },
   ],
 };
+
+export const quiz = {
+  questions: {
+    0: "1. Onde as variáveis de um software ficam armazenadas?",
+    1: "2. Que são arrays?",
+  },
+  options: {
+    0: {
+      opt: [
+        "no software",
+        "na memória RAM do computador",
+        "na placa-mãe",
+        "no processador",
+      ],
+      correct: 1,
+    },
+    1: {
+      opt: [
+        "São estruturas de dados que possibilitam o armazenamento de valores de mesmo tipo em uma única variável",
+        "São variáveis para armazenamento de números inteiros",
+        "São uma forma de algoritmo",
+        "Arrays não existem",
+      ],
+      correct: 0,
+    },
+  },
+};

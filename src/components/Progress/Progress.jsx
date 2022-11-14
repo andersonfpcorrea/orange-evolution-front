@@ -1,21 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import AppContext from "../../context/context";
+import ProgressCircle from "../ProgressCircle/ProgressCircle";
 
 function Progress() {
-  const [progress, setProgress] = useState(0);
   const {
     user: { currentRoadmap, progress: userProgress },
   } = useContext(AppContext);
-  const speed = 30;
-
-  const animateProgressBar = () =>
-    setTimeout(() => {
-      setProgress(progress + 1);
-    }, speed);
-
-  useEffect(() => {
-    if (progress < userProgress) animateProgressBar();
-  }, [progress]);
 
   return (
     <div className="flex flex-col gap-4 w-full">
@@ -23,18 +13,7 @@ function Progress() {
         Seu progresso
       </h2>
       <div className="flex justify-around" style={{ color: "#333" }}>
-        <div className="grid place-items-center pt-4">
-          <div
-            className="h-48 w-48 rounded-full grid place-content-center relative before:bg-white before:rounded-full before:h-40 before:w-40 before:absolute before:-translate-x-1/2 before:-translate-y-1/2 before:top-1/2 before:left-1/2"
-            style={{
-              background: `conic-gradient(
-                #FB6D3A ${progress * 3.6}deg,
-                #ddd ${progress * 3.6}deg`,
-            }}
-          >
-            <div className="isolate text-5xl text-evolutionGrey">{`${progress}%`}</div>
-          </div>
-        </div>
+        <ProgressCircle userProgress={userProgress} speed={30} />
         <div className="flex flex-col  min-[960px]:gap-6 justify-around min-[960px]:justify-start text-lg  pt-4 pl-4 min-[960px]:p-8">
           <p>
             Você está na formação&nbsp;
