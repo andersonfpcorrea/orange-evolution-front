@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MdFilterList } from "react-icons/md";
 
-function SearchFilters({ filters, setList, list }) {
+function SearchFilters({ filters, setList = () => {}, list = [] }) {
   const [format, setFormat] = useState("");
   const [length, setLength] = useState("");
   const [cache, setCache] = useState(list);
@@ -21,8 +21,8 @@ function SearchFilters({ filters, setList, list }) {
         list.length > 0
           ? list.filter((el) => el.type === format)
           : cache.filter((el) => el.type === format);
-      setList(data);
-    } else setList(cache);
+      setList?.(data);
+    } else setList?.(cache);
   }, [format]);
 
   return (
