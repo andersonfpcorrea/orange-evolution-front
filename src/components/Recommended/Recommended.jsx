@@ -1,13 +1,7 @@
-import { useContext } from "react";
-import AppContext from "../../context/context";
 import Card from "../Card/Card";
 import Slider from "../Slider/Slider";
 
-function Recommended({ className }) {
-  const {
-    currentRoadmapCourses: { courses },
-  } = useContext(AppContext);
-
+function Recommended({ className, courses }) {
   const cards = courses.map((course) => (
     <Card course={course} key={course.id} />
   ));

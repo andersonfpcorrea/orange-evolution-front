@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AppContext from "../../context/context";
 import Contents from "../../components/Contents/Contents";
 import SearchBar from "../../components/SearchBar/SearchBar";
