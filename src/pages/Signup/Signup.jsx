@@ -1,13 +1,11 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AppContext from "../../context/context";
 import InputText from "../../components/InputText/InputText";
 import InputSelect from "../../components/InputSelect/InputSelect";
 import ButtonRounded from "../../components/ButtonRounded/ButtonRounded";
 
 function Signup() {
-  const navigate = useNavigate();
-
   const {
     roadmaps: { roadmaps },
   } = useContext(AppContext);
@@ -38,7 +36,9 @@ function Signup() {
         />
 
         <div className="flex justify-end p-2">
-          <ButtonRounded type="button" onClick={() => navigate("/test")} />
+          <Link to="/test">
+            <ButtonRounded type="button" />
+          </Link>
         </div>
       </form>
     </div>

@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         element: <Roadmap />,
       },
       {
-        path: "myCourses",
+        path: "courses",
         element: <MyCourses />,
       },
       {

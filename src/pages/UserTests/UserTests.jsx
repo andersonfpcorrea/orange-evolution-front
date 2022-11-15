@@ -1,10 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../../context/context";
 import Animate from "../../components/Animate/Animate";
 import ButtonRounded from "../../components/ButtonRounded/ButtonRounded";
 
 function UserTests() {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
 
   const {
@@ -13,7 +14,8 @@ function UserTests() {
     result,
   } = useContext(AppContext);
 
-  const navigate = useNavigate();
+  // Reset the test result:
+  useEffect(() => setResult(0), []);
 
   const checkAnswer = ({ target }) => {
     const { answer } = Object.fromEntries([...new FormData(target)]);

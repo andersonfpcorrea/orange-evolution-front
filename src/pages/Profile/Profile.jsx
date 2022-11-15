@@ -14,7 +14,7 @@ function Profile() {
   } = useContext(AppContext);
 
   return (
-    <div className="w-full">
+    <Animate className="w-full relative">
       <BackNavArrow />
       <div className="flex flex-col gap-8 w-full">
         <h2 className="text-3xl font-medium">
@@ -46,7 +46,7 @@ function Profile() {
           />
         </div>
       </div>
-    </div>
+    </Animate>
   );
 }
 

@@ -4,6 +4,7 @@ import Contents from "../../components/Contents/Contents";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchFilters from "../../components/SearchFilters/SearchFilters";
 import BackNavArrow from "../../components/BackNavArrow/BackNavArrow";
+import Animate from "../../components/Animate/Animate";
 
 function Roadmap() {
   const filters = [
@@ -18,21 +19,23 @@ function Roadmap() {
   } = useContext(AppContext);
 
   return (
-    <div className="flex flex-col gap-12">
-      <BackNavArrow />
-      <div className="flex flex-col gap-8">
-        <SearchBar
-          normalText="Explore Trilhas - "
-          boldText="Desenvolvimento Full Stack"
+    <Animate>
+      <div className="flex flex-col gap-12 relative">
+        <BackNavArrow />
+        <div className="flex flex-col gap-8">
+          <SearchBar
+            normalText="Explore Trilhas - "
+            boldText="Desenvolvimento Full Stack"
+          />
+          <SearchFilters filters={filters} />
+        </div>
+        <Contents
+          heading="Respositório de Trilhas"
+          type="roadmap"
+          data={roadmaps}
         />
-        <SearchFilters filters={filters} />
       </div>
-      <Contents
-        heading="Respositório de Trilhas"
-        type="roadmap"
-        data={roadmaps}
-      />
-    </div>
+    </Animate>
   );
 }
 

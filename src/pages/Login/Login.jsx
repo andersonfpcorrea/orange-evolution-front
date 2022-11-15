@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import InputText from "../../components/InputText/InputText";
 
 function Login() {
-  const navigate = useNavigate();
-
   return (
     <div className="max-[1069px]:h-screen max-[1069px]:items-center max-[1069px]:gap-16 flex flex-col gap-32 max-w-2xl">
       <h2 className="text-evolution text-3xl font-semibold">Login</h2>
@@ -24,17 +22,13 @@ function Login() {
           />
         </fieldset>
         <div className="flex justify-around">
-          <Button
-            text="Entrar"
-            type="button"
-            onClick={() => navigate("/app/home")}
-          />
-          <Button
-            text="Cadastrar"
-            type="button"
-            outline
-            onClick={() => navigate("signup")}
-          />
+          <Link to="/app/home">
+            <Button text="Entrar" type="button" />
+          </Link>
+
+          <Link to="signup">
+            <Button text="Cadastrar" type="button" outline />
+          </Link>
         </div>
       </form>
     </div>

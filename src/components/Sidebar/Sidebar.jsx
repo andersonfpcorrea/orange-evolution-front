@@ -7,13 +7,12 @@ import {
   MdOutlineListAlt,
 } from "react-icons/md";
 import { motion } from "framer-motion";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, NavLink, Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 function Sidebar() {
-  const navigate = useNavigate();
   const { pathname } = useLocation();
-  const myCourses = pathname === "/app/myCourses";
+  const myCourses = pathname === "/app/courses";
 
   const iconsConditionalClasses = myCourses
     ? "h-8 w-8 transition-all"
@@ -37,7 +36,7 @@ function Sidebar() {
     "/app/home",
     "/app/explore",
     "/app/roadmaps",
-    "/app/myCourses",
+    "/app/courses",
     "/app/profile",
     "/app/result",
   ];
@@ -50,16 +49,16 @@ function Sidebar() {
     >
       <div
         className={`${
-          pathname === "/app/result" && "h-full"
+          pathname === "/app/result" ? "h-full" : ""
         } flex flex-row min-[960px]:flex-col items-center gap-20 w-full`}
       >
-        <img
-          src={logo}
-          alt="Orange Juice logo"
-          className={`${
-            myCourses ? `w-14` : `w-14 min-[1070px]:w-32`
-          } max-[959px]:hidden`}
-        />
+        <Link to="/app/home" className="max-[959px]:hidden">
+          <img
+            src={logo}
+            alt="Orange Juice logo"
+            className={`${myCourses ? `w-14` : `w-14 min-[1070px]:w-32`} `}
+          />
+        </Link>
         <ul className="flex flex-row min-[960px]:flex-col justify-around min-[960px]:gap-6 w-full">
           {content.map((el, i) => {
             const liActive = (
@@ -68,21 +67,23 @@ function Sidebar() {
                 className={`cursor-pointer min-[960px]:pl-4 ${
                   !myCourses && "min-[1070px]:pl-12"
                 }`}
-                onClick={() => navigate(routes[i])}
               >
-                <motion.div
-                  transition={{ duration: 0.5 }}
-                  animate={{ scale: 1 }}
-                  layoutId="white"
-                  className="flex items-center gap-4 max-[959px]:rounded-b-full min-[960px]:rounded-l-3xl py-2 max-[959px]:pt-6 max-[959px]:pb-6 px-6 min-[960px]:pl-4 text-evolution bg-white"
-                >
-                  {icons[i]}
-                  {!myCourses && (
-                    <p className="whitespace-nowrap hidden min-[1070px]:block">
-                      {el}
-                    </p>
-                  )}
-                </motion.div>
+                {" "}
+                <NavLink to={routes[i]}>
+                  <motion.div
+                    transition={{ duration: 0.5 }}
+                    animate={{ scale: 1 }}
+                    layoutId="white"
+                    className="flex items-center gap-4 max-[959px]:rounded-b-full min-[960px]:rounded-l-3xl py-2 max-[959px]:pt-6 max-[959px]:pb-6 px-6 min-[960px]:pl-4 text-evolution bg-white"
+                  >
+                    {icons[i]}
+                    {!myCourses && (
+                      <p className="whitespace-nowrap hidden min-[1070px]:block">
+                        {el}
+                      </p>
+                    )}
+                  </motion.div>
+                </NavLink>
               </li>
             );
             const liInactive = (
@@ -93,12 +94,13 @@ function Sidebar() {
                 } ${
                   !myCourses && "min-[1070px]:pl-16"
                 } max-[1070px]:justify-center`}
-                onClick={() => navigate(routes[i])}
               >
-                {icons[i]}
-                {!myCourses && (
-                  <p className="hidden min-[1070px]:block">{el}</p>
-                )}
+                <NavLink to={routes[i]} className="flex items-center gap-4 ">
+                  {icons[i]}
+                  {!myCourses && (
+                    <p className="hidden min-[1070px]:block">{el}</p>
+                  )}
+                </NavLink>
               </li>
             );
             return pathname === routes[i] ? liActive : liInactive;
@@ -107,11 +109,15 @@ function Sidebar() {
       </div>
       <div
         className={`flex items-center gap-4 self-start ${
-          myCourses ? "ml-8" : "ml-12"
-        } cursor-pointer max-[959px]:hidden`}
+          myCourses ? "min-[1070px]:ml-8" : "min-[1070px]:ml-12"
+        } cursor-pointer max-[959px]:hidden max-[1069px]:self-center`}
       >
         <MdExitToApp className={iconsConditionalClasses} />
-        {!myCourses && <p>Sair</p>}
+        {!myCourses && (
+          <Link to="/" className="max-[1069px]:hidden">
+            Sair
+          </Link>
+        )}
       </div>
     </nav>
   );
