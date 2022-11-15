@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AppContext from "../../context/context";
 import Contents from "../../components/Contents/Contents";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -26,6 +26,9 @@ function Explore() {
     currentRoadmapCourses: { courses },
     user: { currentRoadmap },
   } = useContext(AppContext);
+
+  const [exploreList, setExploreList] = useState(courses);
+
   return (
     <Animate>
       <div className="flex flex-col gap-12 relative">
@@ -34,13 +37,14 @@ function Explore() {
           <SearchBar
             normalText="Explore conteúdos - "
             boldText={currentRoadmap}
+            setList={setExploreList}
           />
           <SearchFilters filters={filters} />
         </div>
         <Contents
           heading="Repositório de Conteúdos"
           type="course"
-          data={courses}
+          data={exploreList}
         />
       </div>
     </Animate>

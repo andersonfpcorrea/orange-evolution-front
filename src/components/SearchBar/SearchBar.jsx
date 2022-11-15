@@ -1,19 +1,17 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import AppContext from "../../context/context";
 import fetchCoursesByName from "../../APIRequests/fetchCoursesByName";
 import Loading from "../Loading/Loading";
 
-function SearchBar({ normalText, boldText }) {
+function SearchBar({ normalText, boldText, setList }) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const { setCurrentRoadmapCourses } = useContext(AppContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const data = await fetchCoursesByName(input);
-    setCurrentRoadmapCourses(data);
+    const { courses } = await fetchCoursesByName(input);
+    setList(courses);
     setLoading(false);
   };
 
