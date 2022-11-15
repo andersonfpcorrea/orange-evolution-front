@@ -58,7 +58,7 @@ export const progress = {
   favorites: [1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
 };
 
-export const user = {
+export const userMock = {
   id: 1,
   firstName: "Lia",
   lastName: "Sousa",
@@ -68,7 +68,7 @@ export const user = {
   progress: 25, // adquirido por agregação
 };
 
-export const currentRoadmapVideos = {
+export const currentRoadmapVideosMock = {
   quantity: 6,
   courses: [
     {
@@ -134,7 +134,7 @@ export const currentRoadmapVideos = {
   ],
 };
 
-export const currentRoadmapCourses = {
+export const currentRoadmapCoursesMock = {
   quantity: 25,
   courses: [
     {
@@ -991,7 +991,7 @@ export const courses = {
   ],
 };
 
-export const roadmaps = {
+export const roadmapsMock = {
   quantity: 5,
   roadmaps: [
     {
