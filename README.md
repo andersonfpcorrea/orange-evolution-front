@@ -2,6 +2,8 @@
 
 Bem-vindo ao repositório do projeto "Orange Evolution App"
 
+Clique [aqui](orange-evolution-front.pages.dev/) para ver.
+
 ## Como rodar este projeto localmente
 
 Clone o repositório:
