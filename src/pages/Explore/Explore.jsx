@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AppContext from "../../context/context";
-import Contents from "../../components/Contents/Contexts";
+import Contents from "../../components/Contents/Contents";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchFilters from "../../components/SearchFilters/SearchFilters";
 import BackNavArrow from "../../components/BackNavArrow/BackNavArrow";

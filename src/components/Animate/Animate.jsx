@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 function Animate({ children, id, className = "" }) {
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       <motion.div
         key={id}
         initial={{ x: 0, opacity: 0 }}

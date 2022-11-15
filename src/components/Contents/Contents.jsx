@@ -1,4 +1,3 @@
-import PropTypes, { string, number } from "prop-types";
 import Card from "../Card/Card";
 
 function Contents({ heading, type, data }) {
@@ -23,29 +22,5 @@ function Contents({ heading, type, data }) {
     </div>
   );
 }
-
-Contents.propTypes = {
-  heading: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["course", "roadmap"]).isRequired,
-  data: PropTypes.oneOfType([
-    PropTypes.arrayOf({
-      id: number,
-      course: string,
-      type: string,
-      author: string,
-      image: string,
-      length: string,
-      url: string,
-      roadmap: string,
-    }),
-    PropTypes.arrayOf({
-      id: number,
-      title: string,
-      image: string,
-      createdAt: string,
-      updatedAt: string,
-    }),
-  ]).isRequired,
-};
 
 export default Contents;
