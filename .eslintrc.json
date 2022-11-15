@@ -21,6 +21,7 @@
     "react/prop-types": "warn", // * Check later
     "react/no-unstable-nested-components": "off", // * Check later
     "jsx-a11y/click-events-have-key-events": "off", // * Check later
-    "jsx-a11y/no-noninteractive-element-interactions": "off" // * Check later
+    "jsx-a11y/no-noninteractive-element-interactions": "off", // * Check later
+    "no-unused-vars": "warn"
   }
 }

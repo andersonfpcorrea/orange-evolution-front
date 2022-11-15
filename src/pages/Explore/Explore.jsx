@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import AppContext from "../../context/context";
-import Contents from "../../components/Contents/Contexts";
+import Contents from "../../components/Contents/Contents";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchFilters from "../../components/SearchFilters/SearchFilters";
 import BackNavArrow from "../../components/BackNavArrow/BackNavArrow";
+import Animate from "../../components/Animate/Animate";
 
 function Explore() {
   const filters = [
@@ -25,21 +26,23 @@ function Explore() {
     currentRoadmapCourses: { courses },
   } = useContext(AppContext);
   return (
-    <div className="flex flex-col gap-12">
-      <BackNavArrow />
-      <div className="flex flex-col gap-8">
-        <SearchBar
-          normalText="Explore conteúdos - "
-          boldText="Desenvolvimento Full Stack"
+    <Animate>
+      <div className="flex flex-col gap-12 relative">
+        <BackNavArrow />
+        <div className="flex flex-col gap-8">
+          <SearchBar
+            normalText="Explore conteúdos - "
+            boldText="Desenvolvimento Full Stack"
+          />
+          <SearchFilters filters={filters} />
+        </div>
+        <Contents
+          heading="Repositório de Conteúdos"
+          type="course"
+          data={courses}
         />
-        <SearchFilters filters={filters} />
       </div>
-      <Contents
-        heading="Repositório de Conteúdos"
-        type="course"
-        data={courses}
-      />
-    </div>
+    </Animate>
   );
 }
 

@@ -1,13 +1,17 @@
 import PropTypes from "prop-types";
 import { MdKeyboardBackspace } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 function BackNavArrow({ className }) {
+  const navigate = useNavigate();
   return (
-    <div
-      className={`fixed max-[959px]:top-[-30px] max-[959px]:left-[-30px] top-[-48px] left-[-42px] ${className}`}
+    <button
+      className={`$${className} fixed p-1 transition-all cursor-pointer -translate-y-[135%] min-[960px]:-translate-x-full min-[960px]:-translate-y-[200%]
+      hover:bg-evolutionIce hover:rounded-full hover:shadow-lg`}
+      onClick={() => navigate(-1)}
     >
-      <MdKeyboardBackspace style={{ width: "24px", height: "24px" }} />
-    </div>
+      <MdKeyboardBackspace className="w-6 h-6" />
+    </button>
   );
 }
 

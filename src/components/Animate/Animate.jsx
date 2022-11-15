@@ -9,7 +9,7 @@ function Animate({ children, id, className = "" }) {
         initial={{ x: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -10, opacity: 0 }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.3 }}
         className={className}
       >
         {children}
@@ -20,11 +20,12 @@ function Animate({ children, id, className = "" }) {
 
 Animate.propTypes = {
   children: PropTypes.node.isRequired,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
 };
 
 Animate.defaultProps = {
+  id: "",
   className: "",
 };
 

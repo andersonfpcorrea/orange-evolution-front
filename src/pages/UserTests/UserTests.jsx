@@ -1,11 +1,21 @@
-import PropTypes from "prop-types";
-import { useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AppContext from "../../context/context";
 import Animate from "../../components/Animate/Animate";
 import ButtonRounded from "../../components/ButtonRounded/ButtonRounded";
 
-function UserTests({ callback, setResult, result, quiz }) {
+function UserTests() {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
-  const { questions, options } = quiz;
+
+  const {
+    quiz: { questions, options },
+    setResult,
+    result,
+  } = useContext(AppContext);
+
+  // Reset the test result:
+  useEffect(() => setResult(0), []);
 
   const checkAnswer = ({ target }) => {
     const { answer } = Object.fromEntries([...new FormData(target)]);
@@ -17,11 +27,11 @@ function UserTests({ callback, setResult, result, quiz }) {
     e.preventDefault();
     checkAnswer(e);
     if (current + 1 < Object.keys(questions).length) setCurrent(current + 1);
-    else callback();
+    else navigate("/app/result");
   };
 
   return (
-    <div className="flex flex-col gap-20   max-w-2xl h-full">
+    <div className="flex flex-col gap-20 max-w-2xl h-full min-[1360px]:pl-[6vw] min-[1360px]:max-w-[55vw]">
       <div>
         <h2 className="text-evolution text-3xl font-semibold">Área de Teste</h2>
         <p className="text-lg">
@@ -40,7 +50,7 @@ function UserTests({ callback, setResult, result, quiz }) {
                     name="answer"
                     value={i}
                     id={el.slice(0, 10)}
-                    className="appearance-none transition-all scale-110"
+                    className="transition-all scale-125"
                   />
                   <label htmlFor={el.slice(0, 10)}>{el}</label>
                 </li>
@@ -55,11 +65,5 @@ function UserTests({ callback, setResult, result, quiz }) {
     </div>
   );
 }
-
-UserTests.propTypes = {
-  callback: PropTypes.func.isRequired,
-  setResult: PropTypes.func.isRequired,
-  result: PropTypes.number.isRequired,
-};
 
 export default UserTests;

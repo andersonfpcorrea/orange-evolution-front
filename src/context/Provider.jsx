@@ -10,22 +10,21 @@ import {
 } from "../mockUserData";
 
 function AppProvider({ children }) {
+  const qtyOfQuestions = Object.keys(quiz.questions).length;
   const [result, setResult] = useState(0);
-
-  const data = {
-    user,
-    progress,
-    currentRoadmapCourses,
-    currentRoadmapVideos,
-    roadmaps,
-    quiz,
-  };
+  const [totalQuestions] = useState(qtyOfQuestions);
 
   const store = useMemo(
     () => ({
-      ...data,
+      user,
+      progress,
+      currentRoadmapCourses,
+      currentRoadmapVideos,
+      roadmaps,
+      quiz,
       result,
       setResult,
+      totalQuestions,
     }),
     [result]
   );
