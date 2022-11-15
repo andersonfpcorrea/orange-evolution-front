@@ -28,16 +28,19 @@ function AppProvider({ children }) {
 
   const { REACT_APP_PROTOCOL, REACT_APP_URL } = process.env;
 
+  // Loads right away updated roadmap info:
   useEffect(() => {
     fetch(`${REACT_APP_PROTOCOL}://${REACT_APP_URL}/roadmaps`)
       .then((res) => res.json())
       .then((data) => {
         setRoadmaps(data);
-      });
+      })
+      .catch((err) => console.error(err));
   }, []);
 
+  // After the user identifies himself, fetch courses of his roadmap:
   useEffect(() => {
-    const roadmapString = user.currentRoadmap.split(" ")[1];
+    const roadmapString = user.currentRoadmap?.split(" ")[1];
     fetch(
       `${REACT_APP_PROTOCOL}://${REACT_APP_URL}/courses?roadmap=${roadmapString}`
     )
@@ -46,8 +49,9 @@ function AppProvider({ children }) {
       .catch((err) => console.error(err));
   }, [user.currentRoadmap]);
 
+  // After the user identifies himself, fetch video courses related to the roadmap, to be rendered in the app:
   useEffect(() => {
-    const roadmapString = user.currentRoadmap.split(" ")[1];
+    const roadmapString = user.currentRoadmap?.split(" ")[1];
     fetch(
       `${REACT_APP_PROTOCOL}://${REACT_APP_URL}/courses?roadmap=${roadmapString}&type=Video`
     )
@@ -72,7 +76,17 @@ function AppProvider({ children }) {
       token,
       setToken,
     }),
-    [result, token, user, roadmaps, currentRoadmapVideos, currentRoadmapCourses]
+    [
+      result,
+      setResult,
+      token,
+      setToken,
+      user,
+      setUser,
+      roadmaps,
+      currentRoadmapVideos,
+      currentRoadmapCourses,
+    ]
   );
 
   return <AppContext.Provider value={store}>{children}</AppContext.Provider>;

@@ -8,6 +8,7 @@ function InputText({
   value,
   onChange,
   name,
+  min = 0,
 }) {
   return (
     <div
@@ -23,6 +24,7 @@ function InputText({
         value={value}
         onChange={onChange}
         name={name}
+        minLength={min}
       />
     </div>
   );

@@ -44,7 +44,14 @@ function ProfileCard({ user, callback }) {
           </li>
         </ul>
         <p className="italic text-center text-sm text-evolutionGrey">
-          Membro da Orange Evolution desde outubro de 2020
+          {`Membro da Orange Evolution desde ${new Intl.DateTimeFormat(
+            "pt-BR",
+            {
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            }
+          ).format(new Date(user?.createdAt || Date.now()))}`}
         </p>
       </div>
     </figure>

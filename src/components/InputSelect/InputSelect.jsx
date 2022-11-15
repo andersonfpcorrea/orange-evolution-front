@@ -6,6 +6,7 @@ function InputSelect({
   className,
   value,
   onChange,
+  name,
 }) {
   return (
     <div className={`flex justify-between ${className}`}>
@@ -14,8 +15,8 @@ function InputSelect({
         <select
           id={id}
           className="border-[1px] rounded-lg p-4 bg-white"
-          value={value}
           onChange={onChange}
+          name={name}
         >
           {options.map((opt) => (
             <option key={opt.id} defaultValue={defaultOption} value={opt.title}>
