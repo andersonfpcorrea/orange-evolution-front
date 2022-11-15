@@ -62,15 +62,15 @@ export const user = {
   id: 1,
   firstName: "Lia",
   lastName: "Sousa",
-  email: "liasousa@gmail.com",
+  email: "liasousa@email.com",
   photo: Lia,
   currentRoadmap: "Desenvolvimento Full Stack",
-  progress: 25,
+  progress: 25, // adquirido por agregação
 };
 
 export const currentRoadmapVideos = {
   quantity: 6,
-  videos: [
+  courses: [
     {
       id: 35,
       course: "O que um Dev júnior pode ensinar?",

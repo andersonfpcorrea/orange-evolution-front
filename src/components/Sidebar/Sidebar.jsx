@@ -62,14 +62,15 @@ function Sidebar() {
         <ul className="flex flex-row min-[960px]:flex-col justify-around min-[960px]:gap-6 w-full">
           {content.map((el, i) => {
             const liActive = (
-              <li
+              <NavLink
+                to={routes[i]}
                 key={el}
                 className={`cursor-pointer min-[960px]:pl-4 ${
                   !myCourses && "min-[1070px]:pl-12"
                 }`}
               >
                 {" "}
-                <NavLink to={routes[i]}>
+                <li>
                   <motion.div
                     transition={{ duration: 0.5 }}
                     animate={{ scale: 1 }}
@@ -83,11 +84,12 @@ function Sidebar() {
                       </p>
                     )}
                   </motion.div>
-                </NavLink>
-              </li>
+                </li>
+              </NavLink>
             );
             const liInactive = (
-              <li
+              <NavLink
+                to={routes[i]}
                 key={el}
                 className={`flex items-center gap-4 py-2 cursor-pointer ${
                   myCourses && "justify-center"
@@ -95,13 +97,13 @@ function Sidebar() {
                   !myCourses && "min-[1070px]:pl-16"
                 } max-[1070px]:justify-center`}
               >
-                <NavLink to={routes[i]} className="flex items-center gap-4 ">
+                <li className="flex items-center gap-4 ">
                   {icons[i]}
                   {!myCourses && (
                     <p className="hidden min-[1070px]:block">{el}</p>
                   )}
-                </NavLink>
-              </li>
+                </li>
+              </NavLink>
             );
             return pathname === routes[i] ? liActive : liInactive;
           })}

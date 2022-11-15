@@ -24,6 +24,7 @@ function Explore() {
 
   const {
     currentRoadmapCourses: { courses },
+    user: { currentRoadmap },
   } = useContext(AppContext);
   return (
     <Animate>
@@ -32,7 +33,7 @@ function Explore() {
         <div className="flex flex-col gap-8">
           <SearchBar
             normalText="Explore conteúdos - "
-            boldText="Desenvolvimento Full Stack"
+            boldText={currentRoadmap}
           />
           <SearchFilters filters={filters} />
         </div>

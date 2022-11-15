@@ -6,7 +6,7 @@ function BackNavArrow({ className }) {
   const navigate = useNavigate();
   return (
     <button
-      className={`$${className} fixed p-1 transition-all cursor-pointer -translate-y-[135%] min-[960px]:-translate-x-full min-[960px]:-translate-y-[200%]
+      className={`${className} absolute p-1 transition-all cursor-pointer -translate-y-[135%] min-[960px]:-translate-x-full min-[960px]:-translate-y-[200%]
       hover:bg-evolutionIce hover:rounded-full hover:shadow-lg`}
       onClick={() => navigate(-1)}
     >
