@@ -20,8 +20,6 @@ function Profile() {
     roadmaps: { roadmaps },
   } = useContext(AppContext);
 
-  console.log(firstName, lastName, email, password, roadmap, user.id);
-
   useEffect(() => {
     if (firstName && lastName && email && password && roadmap) {
       axios
@@ -38,6 +36,7 @@ function Profile() {
         )
         .then((res) => {
           console.log(res);
+          setUser(res.data);
         })
         .catch((err) => console.error(err));
     }

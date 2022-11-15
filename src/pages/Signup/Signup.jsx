@@ -38,7 +38,11 @@ function Signup() {
 
   return (
     <div className="flex flex-col gap-14 max-w-2xl min-[1360px]:pl-[6vw] min-[1360px]:max-w-[55vw] relative">
-      <Loading className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <Loading
+        className={`${
+          loading ? "absolute" : "hidden"
+        } top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
+      />
       <h2 className="text-evolution text-3xl font-semibold">Crie sua conta</h2>
       <form className="flex flex-col gap-10" onSubmit={handleSubmit}>
         <InputText
