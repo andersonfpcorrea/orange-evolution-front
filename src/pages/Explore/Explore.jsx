@@ -14,7 +14,7 @@ function Explore() {
     },
     {
       name: "Formato",
-      options: ["Apostila", "Artigo", "Curso", "Livro", "Video", "Live"],
+      options: ["Apostila", "Artigo", "Curso", "Livro", "Vídeo", "Live"],
     },
     {
       name: "Duração",
@@ -39,7 +39,11 @@ function Explore() {
             boldText={currentRoadmap}
             setList={setExploreList}
           />
-          <SearchFilters filters={filters} setList={setExploreList} />
+          <SearchFilters
+            filters={filters}
+            setList={setExploreList}
+            list={exploreList}
+          />
         </div>
         <Contents
           heading="Repositório de Conteúdos"
