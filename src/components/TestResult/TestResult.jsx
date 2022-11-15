@@ -5,7 +5,11 @@ import ProgressCircle from "../ProgressCircle/ProgressCircle";
 import Recommended from "../Recommended/Recommended";
 
 function TestResult() {
-  const { result, totalQuestions } = useContext(AppContext);
+  const {
+    result,
+    totalQuestions,
+    currentRoadmapCourses: { courses },
+  } = useContext(AppContext);
   const data = (result / totalQuestions) * 100;
 
   return (
@@ -23,7 +27,7 @@ function TestResult() {
           <p className="text-xl">Seu resultado:</p>
           <ProgressCircle userProgress={data} speed={20} />
         </div>
-        <Recommended />
+        <Recommended courses={courses} />
       </div>
     </Animate>
   );
