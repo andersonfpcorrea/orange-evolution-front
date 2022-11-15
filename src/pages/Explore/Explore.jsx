@@ -39,7 +39,7 @@ function Explore() {
             boldText={currentRoadmap}
             setList={setExploreList}
           />
-          <SearchFilters filters={filters} />
+          <SearchFilters filters={filters} setList={setExploreList} />
         </div>
         <Contents
           heading="Repositório de Conteúdos"
