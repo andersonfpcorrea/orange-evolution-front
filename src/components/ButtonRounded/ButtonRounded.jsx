@@ -6,7 +6,7 @@ function ButtonRounded({ onClick, type = "button", className }) {
     <button
       type={type}
       onClick={onClick}
-      className={`${className} bg-evolution p-6 rounded-full`}
+      className={`${className} bg-evolution p-6 rounded-full disabled:bg-evolutionGrey`}
     >
       <HiArrowRight className="h-8 w-8 text-white" />
     </button>

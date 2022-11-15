@@ -33,11 +33,12 @@ function AppProvider({ children }) {
       .then((res) => res.json())
       .then((data) => {
         setRoadmaps(data);
-      });
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   useEffect(() => {
-    const roadmapString = user.currentRoadmap.split(" ")[1];
+    const roadmapString = user.currentRoadmap?.split(" ")[1];
     fetch(
       `${REACT_APP_PROTOCOL}://${REACT_APP_URL}/courses?roadmap=${roadmapString}`
     )
@@ -47,7 +48,7 @@ function AppProvider({ children }) {
   }, [user.currentRoadmap]);
 
   useEffect(() => {
-    const roadmapString = user.currentRoadmap.split(" ")[1];
+    const roadmapString = user.currentRoadmap?.split(" ")[1];
     fetch(
       `${REACT_APP_PROTOCOL}://${REACT_APP_URL}/courses?roadmap=${roadmapString}&type=Video`
     )
