@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 function ProgressCircle({ userProgress, speed }) {
   const [progress, setProgress] = useState(0);
-  console.log(userProgress);
 
   const animateProgressBar = () =>
     setTimeout(() => {

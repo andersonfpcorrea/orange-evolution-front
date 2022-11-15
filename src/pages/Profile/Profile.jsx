@@ -6,8 +6,10 @@ import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import BackNavArrow from "../../components/BackNavArrow/BackNavArrow";
 import EditProfile from "../../components/EditProfile/EditProfile";
 import Animate from "../../components/Animate/Animate";
+import Loading from "../../components/Loading/Loading";
 
 function Profile() {
+  const [loading, setLoading] = useState(false);
   const [view, setView] = useState("card");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -20,8 +22,17 @@ function Profile() {
     roadmaps: { roadmaps },
   } = useContext(AppContext);
 
+  const eraseForm = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setRoadmap("");
+  };
+
   useEffect(() => {
     if (firstName && lastName && email && password && roadmap) {
+      setLoading(true);
       axios
         .put(
           `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_URL}/users`,
@@ -35,15 +46,22 @@ function Profile() {
           }
         )
         .then((res) => {
-          console.log(res);
           setUser(res.data);
+          eraseForm();
+          setView("card");
         })
-        .catch((err) => console.error(err));
+        .catch((err) => console.error(err))
+        .finally(() => setLoading(false));
     }
   }, [view]);
 
   return (
     <Animate className="w-full relative">
+      <Loading
+        className={`${
+          loading ? "absolute" : "hidden"
+        } top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
+      />
       <BackNavArrow />
       <div className="flex flex-col gap-8 w-full">
         <h2 className="text-3xl font-medium">
