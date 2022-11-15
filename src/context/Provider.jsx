@@ -1,30 +1,26 @@
 import { useState, useMemo, useEffect } from "react";
 import AppContext from "./context";
-import { quiz } from "../mockUserData";
+import {
+  quiz,
+  userMock,
+  currentRoadmapCoursesMock,
+  currentRoadmapVideosMock,
+  roadmapsMock,
+} from "../mockUserData";
 
 function AppProvider({ children }) {
   const qtyOfQuestions = Object.keys(quiz.questions).length;
   const [result, setResult] = useState(0);
   const [totalQuestions] = useState(qtyOfQuestions);
   const [token, setToken] = useState("");
-  const [user, setUser] = useState({
-    id: 1,
-    firstName: "",
-    lastName: "",
-    email: "",
-    photo: "",
-    currentRoadmap: "",
-    progress: 0,
-  });
-  const [roadmaps, setRoadmaps] = useState({ quantity: null, roadmaps: [] });
-  const [currentRoadmapCourses, setCurrentRoadmapCourses] = useState({
-    quantity: null,
-    courses: [],
-  });
-  const [currentRoadmapVideos, setCurrentRoadmapVideos] = useState({
-    quantity: null,
-    courses: [],
-  });
+  const [user, setUser] = useState(userMock);
+  const [roadmaps, setRoadmaps] = useState(roadmapsMock);
+  const [currentRoadmapCourses, setCurrentRoadmapCourses] = useState(
+    currentRoadmapCoursesMock
+  );
+  const [currentRoadmapVideos, setCurrentRoadmapVideos] = useState(
+    currentRoadmapVideosMock
+  );
 
   const { REACT_APP_PROTOCOL, REACT_APP_URL } = process.env;
 
@@ -67,6 +63,7 @@ function AppProvider({ children }) {
       user,
       setUser,
       currentRoadmapCourses,
+      setCurrentRoadmapCourses,
       currentRoadmapVideos,
       roadmaps,
       quiz,
