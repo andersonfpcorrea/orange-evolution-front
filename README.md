@@ -1,6 +1,5 @@
-# Orange Evolution Frontend
+# Orange Evolution Frontend 🍊
 
-## Setup do projeto
+Bem-vindo ao repositório do projeto "Orange Evolution"
 
-- React v.18.2.0
-- React Router v.6.4.3
+## Como rodar este projeto localmente

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: 'Release'
+=======
+name: "Release"
+>>>>>>> development
 on:
   push:
     branches:
@@ -11,11 +15,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
+<<<<<<< HEAD
           node-version-file: '.nvmrc'
           cache: 'npm'
+=======
+          node-version-file: ".nvmrc"
+          cache: "npm"
+>>>>>>> development
       - name: Install dependencies
         run: npm install
       - name: Release a new version
         run: npx semantic-release
         env:
+<<<<<<< HEAD
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+=======
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+>>>>>>> development

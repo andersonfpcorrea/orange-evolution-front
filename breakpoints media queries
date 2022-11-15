@@ -1,0 +1,7 @@
+min-width 1150 - MyCourses (ajusta vídeo e aside)
+
+min-width 1070 - Home (ajusta sidebar - app modo mobile)
+
+min-width 960 - Home (ajustar padding lateral), Sidebar (mover para o fundo da tela), NavBackArrow (Ajustar posicionamento)
+
+min-width 360 - Main (ajusta padding lateral), VideoList (remove padding lateral)
