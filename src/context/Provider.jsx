@@ -26,10 +26,10 @@ function AppProvider({ children }) {
     courses: [],
   });
 
-  const { REACT_APP_PROTOCOL: protocol, REACT_APP_URL: url } = process.env;
+  const { REACT_APP_PROTOCOL, REACT_APP_URL } = process.env;
 
   useEffect(() => {
-    fetch(`${protocol}://${url}/roadmaps`)
+    fetch(`${REACT_APP_PROTOCOL}://${REACT_APP_URL}/roadmaps`)
       .then((res) => res.json())
       .then((data) => {
         setRoadmaps(data);
@@ -38,7 +38,9 @@ function AppProvider({ children }) {
 
   useEffect(() => {
     const roadmapString = user.currentRoadmap.split(" ")[1];
-    fetch(`${protocol}://${url}/courses?roadmap=${roadmapString}`)
+    fetch(
+      `${REACT_APP_PROTOCOL}://${REACT_APP_URL}/courses?roadmap=${roadmapString}`
+    )
       .then((res) => res.json())
       .then((data) => setCurrentRoadmapCourses(data))
       .catch((err) => console.error(err));
@@ -46,7 +48,9 @@ function AppProvider({ children }) {
 
   useEffect(() => {
     const roadmapString = user.currentRoadmap.split(" ")[1];
-    fetch(`${protocol}://${url}/courses?roadmap=${roadmapString}&type=Video`)
+    fetch(
+      `${REACT_APP_PROTOCOL}://${REACT_APP_URL}/courses?roadmap=${roadmapString}&type=Video`
+    )
       .then((res) => res.json())
       .then((data) => {
         setCurrentRoadmapVideos(data);
