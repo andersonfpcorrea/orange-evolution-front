@@ -1,4 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import axios from "axios";
 import AppContext from "../../context/context";
 import Button from "../../components/Button/Button";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
@@ -8,10 +9,39 @@ import Animate from "../../components/Animate/Animate";
 
 function Profile() {
   const [view, setView] = useState("card");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [roadmap, setRoadmap] = useState("");
   const {
     user,
+    setUser,
     roadmaps: { roadmaps },
   } = useContext(AppContext);
+
+  console.log(firstName, lastName, email, password, roadmap, user.id);
+
+  useEffect(() => {
+    if (firstName && lastName && email && password && roadmap) {
+      axios
+        .put(
+          `${process.env.REACT_APP_PROTOCOL}://${process.env.REACT_APP_URL}/users`,
+          {
+            firstName,
+            lastName,
+            email,
+            password,
+            roadmap,
+            id: user.id,
+          }
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.error(err));
+    }
+  }, [view]);
 
   return (
     <Animate className="w-full relative">
@@ -27,7 +57,18 @@ function Profile() {
           </Animate>
         ) : (
           <Animate id="2">
-            <EditProfile user={user} roadmaps={roadmaps} />
+            <EditProfile
+              user={user}
+              roadmaps={roadmaps}
+              handlers={{
+                setFirstName,
+                setLastName,
+                setEmail,
+                setPassword,
+                setRoadmap,
+              }}
+              values={(firstName, lastName, email, password, roadmap)}
+            />
           </Animate>
         )}
 
@@ -40,6 +81,7 @@ function Profile() {
           />
           <Button
             text={view === "card" ? "Editar" : "Salvar"}
+            type="submit"
             onClick={
               view === "card" ? () => setView("form") : () => setView("card")
             }

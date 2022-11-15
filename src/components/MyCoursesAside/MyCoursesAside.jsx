@@ -5,7 +5,7 @@ import formatTimeString from "../../utils/formatTimeString";
 import formatStringSize from "../../utils/formatStringSize";
 
 function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
-  const { videos } = courseList;
+  const { courses } = courseList;
 
   const activeStyle =
     "bg-evolution bg-opacity-40 rounded-lg min-[1150px]:rounded-l-full opacity-80";
@@ -22,7 +22,7 @@ function MyCoursesAside({ selectedVideo, courseList, setSelectedVideo }) {
   function VideosList() {
     return (
       <ul className="flex flex-col gap-2 min-[1150px]:gap-0 text-base min-[960px]:text-lg min-[1150px]:text-xs">
-        {videos.map((video) => {
+        {courses?.map((video) => {
           const liActive = (
             <li key={video.id}>
               <button

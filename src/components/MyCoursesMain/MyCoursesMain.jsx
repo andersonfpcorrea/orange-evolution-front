@@ -5,20 +5,20 @@ import MyCoursesAside from "../MyCoursesAside/MyCoursesAside";
 
 function MyCoursesMain() {
   const { currentRoadmapVideos } = useContext(AppContext);
-  const { videos } = currentRoadmapVideos;
-  const [selectedVideo, setSelectedVideo] = useState(videos[0]);
+  const { courses } = currentRoadmapVideos;
+  const [selectedVideo, setSelectedVideo] = useState(courses[0]);
 
   return (
     <div className="flex flex-col w-full min-[1150px]:flex-row min-[1150px]:justify-between">
+      <div>{courses && <VideoPlayer video={selectedVideo} />}</div>
       <div>
-        <VideoPlayer video={selectedVideo} />
-      </div>
-      <div>
-        <MyCoursesAside
-          selectedVideo={selectedVideo}
-          courseList={currentRoadmapVideos}
-          setSelectedVideo={setSelectedVideo}
-        />
+        {courses && (
+          <MyCoursesAside
+            selectedVideo={selectedVideo}
+            courseList={currentRoadmapVideos}
+            setSelectedVideo={setSelectedVideo}
+          />
+        )}
       </div>
     </div>
   );

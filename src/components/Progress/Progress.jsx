@@ -13,7 +13,9 @@ function Progress() {
         Seu progresso
       </h2>
       <div className="flex justify-around" style={{ color: "#333" }}>
-        <ProgressCircle userProgress={userProgress} speed={30} />
+        {userProgress && (
+          <ProgressCircle userProgress={userProgress} speed={30} />
+        )}
         <div className="flex flex-col  min-[960px]:gap-6 justify-around min-[960px]:justify-start text-lg  pt-4 pl-4 min-[960px]:p-8">
           <p>
             Você está na formação&nbsp;
