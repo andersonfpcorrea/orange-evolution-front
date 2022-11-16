@@ -33,7 +33,7 @@ REACT_APP_URL=orange-evolution.up.railway.app
 
 O React automaticamente dá acesso a essas variáveis de ambiente, basta deixar o nome delas começando com `REACT_APP_`
 
-Para iniciar este projeto basta rodar o seguinte comandos na raiz do diretório:
+Para iniciar este projeto basta rodar o seguinte comando na raiz do diretório:
 
 ```
 npm start
