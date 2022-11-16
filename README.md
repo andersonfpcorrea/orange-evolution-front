@@ -4,6 +4,13 @@ Bem-vindo ao repositório do projeto "Orange Evolution App"
 
 Clique [aqui](orange-evolution-front.pages.dev/) para ver.
 
+Faça **login** no app com as seguinte credencial:
+
+```
+user: liasousa@email.com
+password: 123456
+```
+
 ## Como rodar este projeto localmente
 
 Clone o repositório:
