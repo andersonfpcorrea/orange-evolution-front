@@ -2,14 +2,25 @@
 
 Bem-vindo ao repositório do projeto "Orange Evolution App"
 
-Clique [aqui](orange-evolution-front.pages.dev/) para ver.
+Clique [aqui](https://orange-evolution-front.pages.dev/app/home) para ver o app.
 
-Faça **login** no app com as seguinte credencial:
+![image](https://github.com/andersonfpcorrea/orange-evolution-front/assets/92505216/9b6a869a-450e-46ce-8599-4ab833bad973)
+
+![image](https://github.com/andersonfpcorrea/orange-evolution-front/assets/92505216/7f2bc453-2863-4c90-a149-3f29c09a506f)
+
+
+Faça [**login**](https://orange-evolution-front.pages.dev) no app com as seguinte credencial (não disponível mais -- o backend que rodava no Railway está off):
 
 ```
 user: liasousa@email.com
 password: 123456
 ```
+
+**Rotas:**
+- [Cadastro](https://orange-evolution-front.pages.dev/signup)
+- [Login](https://orange-evolution-front.pages.dev/)
+- [Teste inicial de conhecimentos](https://orange-evolution-front.pages.dev/test)
+- [App](https://orange-evolution-front.pages.dev/app/home)
 
 ## Como rodar este projeto localmente
 
